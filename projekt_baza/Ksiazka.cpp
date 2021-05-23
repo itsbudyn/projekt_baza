@@ -1,0 +1,29 @@
+#include "Ksiazka.h"
+
+void Ksiazka::wyswietl() {
+    std::cout << "Tytu³:\t" << this->tytul << std::endl;
+    std::cout << "Autorzy:\t" << this->autor << std::endl;
+    std::cout << "Wydawnictwo:\t" << this->wydawnictwo << std::endl;
+    std::cout << "Rodzaj: \t" << this->rodzaj << std::endl;
+    std::cout << "Rok wydania:\t" << this->rok_wydania << std::endl;
+    std::cout << std::endl;
+    std::cout << "Stron:\t" << this->strony << std::endl;
+    std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
+    std::cout << std::endl;
+    std::cout << "Ocena:\t" << this->ocena << std::endl;
+    std::cout << "Ulubione:\t" << this->ulubione << std::endl;
+}
+
+Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_rodzaj) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
+    this->strony = u_strony;
+    this->autor = u_autor;
+    this->wydawnictwo = u_wydawnictwo;
+    this->rodzaj = u_rodzaj;
+}
+
+Ksiazka::Ksiazka(Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
+    this->strony = x.strony;
+    this->autor = x.autor;
+    this->wydawnictwo = x.wydawnictwo;
+    this->rodzaj = x.rodzaj;
+}
