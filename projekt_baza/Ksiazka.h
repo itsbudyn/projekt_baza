@@ -11,5 +11,5 @@ public:
 
     inline void wyswietl();
     inline Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_rodzaj);
-    inline Ksiazka(Ksiazka& x);
+    inline Ksiazka(const Ksiazka& x);
 };

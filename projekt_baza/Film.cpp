@@ -19,7 +19,7 @@ Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, un
     this->gatunek = u_gatunek;
 }
 
-Film::Film(Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
+Film::Film(const Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
     this->czas_trwania = x.czas_trwania;
     this->rezyser = x.rezyser;
     this->gatunek = x.gatunek;

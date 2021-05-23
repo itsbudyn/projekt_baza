@@ -3,6 +3,7 @@
 #include "Ksiazka.cpp"
 #include "Film.cpp"
 #include "Album_muzyczny.cpp"
+#include "funkcje.cpp"
 
 int main()
 {
@@ -14,4 +15,13 @@ int main()
     std::vector<Album_muzyczny> muzyka;
 
     std::cout << "Hello World!\n";
+    dodaj_ksiazke(ksiazki);
+    system("cls");
+    wsk=&ksiazki.at(0);
+    wsk->wyswietl();
+
+    dodaj_film(filmy);
+    system("cls");
+    wsk = &filmy.at(0);
+    wsk->wyswietl();
 }

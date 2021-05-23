@@ -23,7 +23,7 @@ Album_muzyczny::Album_muzyczny(std::string u_tytul, unsigned short u_rok_wydania
     this->gatunek = gatunek;
 }
 
-Album_muzyczny::Album_muzyczny(Album_muzyczny& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
+Album_muzyczny::Album_muzyczny(const Album_muzyczny& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
     this->czas_trwania = x.czas_trwania;
     this->utworow = x.utworow;
     this->autor = x.autor;

@@ -141,6 +141,7 @@
   <ItemGroup>
     <ClCompile Include="Album_muzyczny.cpp" />
     <ClCompile Include="Film.cpp" />
+    <ClCompile Include="funkcje.cpp" />
     <ClCompile Include="Ksiazka.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Utwor.cpp" />
@@ -148,6 +149,7 @@
   <ItemGroup>
     <ClInclude Include="Album_muzyczny.h" />
     <ClInclude Include="Film.h" />
+    <ClInclude Include="funkcje.h" />
     <ClInclude Include="Header.h" />
     <ClInclude Include="Ksiazka.h" />
     <ClInclude Include="Utwor.h" />

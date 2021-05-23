@@ -30,6 +30,9 @@
     <ClCompile Include="Album_muzyczny.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="funkcje.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utwor.h">
@@ -45,6 +48,9 @@
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="Album_muzyczny.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="funkcje.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
