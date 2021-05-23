@@ -6,3 +6,4 @@
 
 inline void dodaj_ksiazke(std::vector<Ksiazka>& k);
 inline void dodaj_film(std::vector<Film>& f);
+inline void dodaj_album(std::vector<Album_muzyczny>& a);

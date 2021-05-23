@@ -15,7 +15,7 @@ int main()
     std::vector<Album_muzyczny> muzyka;
 
     std::cout << "Hello World!\n";
-    dodaj_ksiazke(ksiazki);
+    /*dodaj_ksiazke(ksiazki);
     system("cls");
     wsk=&ksiazki.at(0);
     wsk->wyswietl();
@@ -23,5 +23,10 @@ int main()
     dodaj_film(filmy);
     system("cls");
     wsk = &filmy.at(0);
+    wsk->wyswietl();*/
+
+    dodaj_album(muzyka);
+    system("cls");
+    wsk = &muzyka.at(0);
     wsk->wyswietl();
 }

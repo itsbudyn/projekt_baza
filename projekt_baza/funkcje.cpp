@@ -99,3 +99,59 @@ void dodaj_film(std::vector<Film>& f) {
     f.push_back(x);
     system("pause");
 }
+
+void dodaj_album(std::vector<Album_muzyczny>& a) {
+    std::string tytul; 
+    unsigned short rok_wydania; 
+    double ocena; 
+    unsigned short min_wiek; 
+    bool ulubione; 
+    unsigned short czas_trwania; 
+    unsigned short utworow; 
+    bool czy_single; 
+    std::string autor; 
+    std::string gatunek; 
+
+    std::cout << "Podaj tytu³ albumu: ";
+    std::getline(std::cin, tytul);
+
+    std::cout << "Podaj autorów albumu: ";
+    std::getline(std::cin, autor);
+
+    std::cout << "Podaj rok wydania albumu: ";
+    std::cin >> rok_wydania;
+    std::cin.ignore(256, '\n');
+
+    std::cout << "Podaj gatunek muzyczny albumu: ";
+    std::getline(std::cin, gatunek);
+
+    std::cout << "Podaj czas trwania albumu [m]: ";
+    std::cin >> czas_trwania;
+    std::cin.ignore(256, '\n');
+
+    std::cout << "Podaj iloœæ utworów w albumie: ";
+    std::cin >> utworow;
+    std::cin.ignore(256, '\n');
+    if (utworow == 1)czy_single = true;
+    else czy_single = false;
+
+    std::cout << "Podaj minimalne ograniczenie wiekowe: ";
+    std::cin >> min_wiek;
+    std::cin.ignore(256, '\n');
+
+    std::cout << "Ocena? (0-5)";
+    std::cin >> ocena;
+    std::cin.ignore(256, '\n');
+
+    std::cout << "Oznaczyæ jako ulubione? [t/N]";
+    char wybor;
+    std::cin >> wybor;
+    std::cin.ignore(256, '\n');
+    if (tolower(wybor) == 't') ulubione = true;
+    else ulubione = false;
+
+    Album_muzyczny x(tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, czy_single, autor, gatunek);
+    x.wyswietl();
+    a.push_back(x);
+    system("pause");
+}
