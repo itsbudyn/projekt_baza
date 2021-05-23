@@ -10,7 +10,10 @@ void Film::wyswietl() {
     std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
     std::cout << std::endl;
     std::cout << "Ocena:\t" << this->ocena << std::endl;
-    std::cout << "Ulubione:\t" << this->ulubione << std::endl;
+    std::cout << "Ulubione:\t";
+    if (this->ulubione == true) std::cout << "Tak";
+    else std::cout << "Nie";
+    std::cout << std::endl;
 }
 
 Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {

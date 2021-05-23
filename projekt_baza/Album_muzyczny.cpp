@@ -12,7 +12,10 @@ void Album_muzyczny::wyswietl() {
     std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
     std::cout << std::endl;
     std::cout << "Ocena:\t\t\t" << this->ocena << std::endl;
-    std::cout << "Ulubione:\t\t" << this->ulubione << std::endl;
+    std::cout << "Ulubione:\t\t";
+    if (this->ulubione == true) std::cout << "Tak";
+    else std::cout << "Nie";
+    std::cout << std::endl;
 }
 
 Album_muzyczny::Album_muzyczny(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, unsigned short u_utworow, bool u_czy_single, std::string u_autor, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {

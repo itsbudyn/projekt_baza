@@ -16,10 +16,13 @@ int main()
 
     while (true) {
         system("cls");
+        unsigned short choice;
         std::cout << "Menu g³ówne" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Dodaj przedmiot do bazy." << std::endl;
         std::cout << "2. Przegl¹daj bazê." << std::endl;
+        std::cout << "3. Wyszukiwanie." << std::endl;
+        std::cout << "4. Edytuj/Usuñ przedmiot z bazy." << std::endl;
         std::cout << std::endl;
         std::cout << "0. WyjdŸ." << std::endl;
         std::cout << std::endl;
@@ -30,14 +33,13 @@ int main()
         std::cout << "Albumów muz.:\t" << muzyka.size() << std::endl;
         std::cout << std::endl;
         std::cout << "Wybór: ";
-        unsigned short choice;
-        unsigned short choice1;
         std::cin >> choice;
         std::cin.ignore(256, '\n');
         system("cls");
 
         switch (choice) {
             case 1: {
+                unsigned short choice1;
                 std::cout << "Dodawanie przedmiotów." << std::endl;
                 std::cout << "1. Dodaj ksi¹¿kê." << std::endl;
                 std::cout << "2. Dodaj film." << std::endl;
@@ -63,9 +65,11 @@ int main()
                         break;
                     }
                 }
-                if (choice1 == 0) break;
+                break;
             }
             case 2: {
+                unsigned short choice1;
+                unsigned short choice2;
                 std::cout << "Przegl¹danie przedmiotów." << std::endl;
                 std::cout << "1. Przegl¹daj ksi¹¿ki." << std::endl;
                 std::cout << "2. Przegl¹daj filmy." << std::endl;
@@ -77,11 +81,20 @@ int main()
                 std::cin >> choice1;
                 std::cin.ignore(256, '\n');
                 system("cls");
+                if (choice1 == 0)break;
+                std::cout << "Pokazywaæ tylko ulubione? (1 - Tak, Reszta - Nie)" << std::endl;
+                std::cout << "Wybór: ";
+                std::cin >> choice2;
+                std::cin.ignore(256, '\n');
+                system("cls");
                 switch (choice1) {
                     case 1: {
                         for (unsigned int i = 0; i < ksiazki.size(); i++) {
+                            if (choice2 == 1) {
+                                if (ksiazki.at(i).ulubione == false)continue;
+                            }
                             std::cout << std::endl;
-                            std::cout << "Ksi¹¿ka nr. " << i << std::endl;
+                            std::cout << "Ksi¹¿ka nr. " << i+1 << std::endl;
                             wsk = &ksiazki.at(i);
                             wsk->wyswietl();
                         }
@@ -90,8 +103,11 @@ int main()
                     }
                     case 2: {
                         for (unsigned int i = 0; i < filmy.size(); i++) {
+                            if (choice2 == 1) {
+                                if (ksiazki.at(i).ulubione == false)continue;
+                            }
                             std::cout << std::endl;
-                            std::cout << "Film nr. " << i << std::endl;
+                            std::cout << "Film nr. " << i+1 << std::endl;
                             wsk = &filmy.at(i);
                             wsk->wyswietl();
                         }
@@ -99,17 +115,64 @@ int main()
                         break;
                     }
                     case 3: {
-                        for (unsigned int i = 0; i < ksiazki.size(); i++) {
+                        for (unsigned int i = 0; i < muzyka.size(); i++) {
+                            if (choice2 == 1) {
+                                if (ksiazki.at(i).ulubione == false)continue;
+                            }
                             std::cout << std::endl;
-                            std::cout << "Album muzyczny nr. " << i << std::endl;
-                            wsk = &filmy.at(i);
+                            std::cout << "Album muzyczny nr. " << i+1 << std::endl;
+                            wsk = &muzyka.at(i);
                             wsk->wyswietl();
                         }
                         system("pause");
                         break;
                     }
                 }
-                if (choice1 == 0) break;
+                break;
+            }
+            case 3: {
+                unsigned short choice1;
+                std::cout << "Wyszukiwanie: " << std::endl;
+                std::cout << std::endl;
+                std::cout << "1. Szukaj w ksi¹¿kach" << std::endl;
+                std::cout << "2. Szukaj w filmach" << std::endl;
+                std::cout << "3. Szukaj w albumach muzycznych" << std::endl;
+                std::cout << std::endl;
+                std::cout << "0. Anuluj" << std::endl;
+                std::cout << std::endl;
+                std::cout << "Wybór: ";
+                std::cin >> choice1;
+                std::cin.ignore(256, '\n');
+                break;
+            }
+            case 4: {
+                unsigned short choice1;
+                std::cout << "Edytowaæ/Usun¹æ sk¹d?" << std::endl;
+                std::cout << std::endl;
+                std::cout << "1. Ksi¹¿ki" << std::endl;
+                std::cout << "2. Filmy" << std::endl;
+                std::cout << "3. Albumy muzyczne" << std::endl;
+                std::cout << std::endl;
+                std::cout << "0. Anuluj" << std::endl;
+                std::cout << std::endl;
+                std::cout << "Wybór: ";
+                std::cin >> choice1;
+                std::cin.ignore(256, '\n');
+                switch (choice1) {
+                    case 1: {
+                        edytujKsiazki(ksiazki);
+                        break;
+                    }
+                    case 2: {
+                        edytujFilmy(filmy);
+                        break;
+                    }
+                    case 3: {
+                        edytujAlbumMuzyczny(muzyka);
+                        break;
+                    }
+                }
+                break;
             }
         }
         if (choice == 0) break;
