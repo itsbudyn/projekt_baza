@@ -729,10 +729,10 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         case 5: {
             std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
             std::cout << std::endl;
-            std::cout << "1. Wyszukaj po ksi¹¿kach wydanych w podanym roku" << std::endl;
-            std::cout << "2. Wyszukaj ksi¹¿ki starsze i wydane w podanym roku" << std::endl;
-            std::cout << "3. Wyszukaj ksi¹¿ki nowsze i wydawne w podanym roku" << std::endl;
-            std::cout << "4. Wyszukaj ksi¹¿ki wydane w przedziale podanych lat" << std::endl;
+            std::cout << "1. Wyszukaj ksi¹¿ki wydane w podanym roku" << std::endl;
+            std::cout << "2. Wyszukaj ksi¹¿ki wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
+            std::cout << "3. Wyszukaj ksi¹¿ki wydane w podanym roku b¹dŸ póŸniej" << std::endl;
+            std::cout << "4. Wyszukaj ksi¹¿ki wydane w podanym przedziale lat" << std::endl;
             std::cout << std::endl;
             std::cout << "0. Anuluj" << std::endl;
             std::cout << std::endl;
@@ -826,7 +826,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         case 6: {
             std::cout << "W jaki sposób wyszukaæ po iloœci stron?" << std::endl;
             std::cout << std::endl;
-            std::cout << "1. Wyszukaj po ksi¹¿kach maj¹cych dok³adnie tyle stron" << std::endl;
+            std::cout << "1. Wyszukaj ksi¹¿ki maj¹ce tyle stron" << std::endl;
             std::cout << "2. Wyszukaj ksi¹¿ki maj¹ce tyle b¹dŸ mniej stron" << std::endl;
             std::cout << "3. Wyszukaj ksi¹¿ki maj¹ce tyle b¹dŸ wiêcej stron" << std::endl;
             std::cout << "4. Wyszukaj ksi¹¿ki maj¹ce iloœæ stron w podanym przedziale" << std::endl;
@@ -942,8 +942,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
             std::cout << std::endl;
             std::cout << "1. Wyszukaj ksi¹¿ki o dok³adnie takiej ocenie" << std::endl;
-            std::cout << "2. Wyszukaj ksi¹¿ki o gorszej lub takiej samej ocenie" << std::endl;
-            std::cout << "3. Wyszukaj ksi¹¿ki o lepszej lub takiej samej ocenie" << std::endl;
+            std::cout << "2. Wyszukaj ksi¹¿ki o gorszej lub takiej ocenie" << std::endl;
+            std::cout << "3. Wyszukaj ksi¹¿ki o lepszej lub takiej ocenie" << std::endl;
             std::cout << "4. Wyszukaj ksi¹¿ki w podanym przedziale ocen" << std::endl;
             std::cout << "5. Wyszukaj ksi¹¿ki jeszcze nie ocenione" << std::endl;
             std::cout << std::endl;
@@ -1130,10 +1130,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
     case 4: {
         std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj po filmach wydanych w podanym roku" << std::endl;
-        std::cout << "2. Wyszukaj filmy starsze i wydane w podanym roku" << std::endl;
-        std::cout << "3. Wyszukaj filmy nowsze i wydawne w podanym roku" << std::endl;
-        std::cout << "4. Wyszukaj filmy wydane w przedziale podanych lat" << std::endl;
+        std::cout << "1. Wyszukaj filmy wydane w podanym roku" << std::endl;
+        std::cout << "2. Wyszukaj filmy wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
+        std::cout << "3. Wyszukaj filmy wydane w podanym roku b¹dŸ póŸniej" << std::endl;
+        std::cout << "4. Wyszukaj filmy wydane w podanym przedziale lat" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
@@ -1227,7 +1227,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     case 5: {
         std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj filmy trwaj¹cyce dok³adnie tyle" << std::endl;
+        std::cout << "1. Wyszukaj filmy trwaj¹ce tyle" << std::endl;
         std::cout << "2. Wyszukaj filmy trwaj¹ce tyle b¹dŸ krócej" << std::endl;
         std::cout << "3. Wyszukaj filmy trwaj¹ce tyle b¹dŸ d³u¿ej" << std::endl;
         std::cout << "4. Wyszukaj filmy, których czas trwania jest w podanym przedziale" << std::endl;
@@ -1343,8 +1343,8 @@ void szukajFilmu(std::vector<Film>& filmy) {
         std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj filmy o dok³adnie takiej ocenie" << std::endl;
-        std::cout << "2. Wyszukaj filmy o gorszej lub takiej samej ocenie" << std::endl;
-        std::cout << "3. Wyszukaj filmy o lepszej lub takiej samej ocenie" << std::endl;
+        std::cout << "2. Wyszukaj filmy o gorszej lub takiej ocenie" << std::endl;
+        std::cout << "3. Wyszukaj filmy o lepszej lub takiej ocenie" << std::endl;
         std::cout << "4. Wyszukaj filmy w podanym przedziale ocen" << std::endl;
         std::cout << "5. Wyszukaj filmy jeszcze nie ocenione" << std::endl;
         std::cout << std::endl;
@@ -1532,10 +1532,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     case 4: {
         std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj po albumach wydanych w podanym roku" << std::endl;
-        std::cout << "2. Wyszukaj albumy starsze i wydane w podanym roku" << std::endl;
-        std::cout << "3. Wyszukaj albumy nowsze i wydawne w podanym roku" << std::endl;
-        std::cout << "4. Wyszukaj albumy wydane w przedziale podanych lat" << std::endl;
+        std::cout << "1. Wyszukaj albumy wydane w podanym roku" << std::endl;
+        std::cout << "2. Wyszukaj albumy wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
+        std::cout << "3. Wyszukaj albumy wydane w podanym roku b¹dŸ póŸniej" << std::endl;
+        std::cout << "4. Wyszukaj albumy wydane w podanym przedziale lat" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
@@ -1629,7 +1629,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     case 5: {
         std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj albumy trwaj¹cyce dok³adnie tyle" << std::endl;
+        std::cout << "1. Wyszukaj albumy trwaj¹ce dok³adnie tyle" << std::endl;
         std::cout << "2. Wyszukaj albumy trwaj¹ce tyle b¹dŸ krócej" << std::endl;
         std::cout << "3. Wyszukaj albumy trwaj¹ce tyle b¹dŸ d³u¿ej" << std::endl;
         std::cout << "4. Wyszukaj albumy, których czas trwania jest w podanym przedziale" << std::endl;

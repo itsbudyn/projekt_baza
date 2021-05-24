@@ -20,7 +20,7 @@ int main()
         std::cout << "Menu g³ówne" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Dodaj przedmiot do bazy." << std::endl;
-        std::cout << "2. Przegl¹daj bazê.\t\t[do zrobienia]" << std::endl;
+        std::cout << "2. Przegl¹daj bazê.\t\t[do zrobienia][wersja podstawowa]" << std::endl;
         std::cout << "3. Wyszukiwanie." << std::endl;
         std::cout << "4. Edytuj/Usuñ przedmiot z bazy." << std::endl;
         std::cout << std::endl;
