@@ -91,7 +91,7 @@ int main()
                     case 1: {
                         for (unsigned int i = 0; i < ksiazki.size(); i++) {
                             if (choice2 == 1) {
-                                if (ksiazki.at(i).ulubione == false)continue;
+                                if (!ksiazki.at(i).czyUlubione())continue;
                             }
                             std::cout << std::endl;
                             std::cout << "Ksi¹¿ka nr. " << i+1 << std::endl;
@@ -104,7 +104,7 @@ int main()
                     case 2: {
                         for (unsigned int i = 0; i < filmy.size(); i++) {
                             if (choice2 == 1) {
-                                if (ksiazki.at(i).ulubione == false)continue;
+                                if (!ksiazki.at(i).czyUlubione())continue;
                             }
                             std::cout << std::endl;
                             std::cout << "Film nr. " << i+1 << std::endl;
@@ -117,7 +117,7 @@ int main()
                     case 3: {
                         for (unsigned int i = 0; i < muzyka.size(); i++) {
                             if (choice2 == 1) {
-                                if (ksiazki.at(i).ulubione == false)continue;
+                                if (!ksiazki.at(i).czyUlubione())continue;
                             }
                             std::cout << std::endl;
                             std::cout << "Album muzyczny nr. " << i+1 << std::endl;

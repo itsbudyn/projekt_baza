@@ -207,7 +207,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                         std::string tytul;
                         std::cout << "Podaj nowy tytu³: ";
                         std::getline(std::cin, tytul);
-                        wsk->tytul = tytul;
+                        ksiazki.at(choice - 1).tytul = tytul;
                         std::cout << "Zmieniono!" << std::endl;
                         system("pause");
                         break;
@@ -217,7 +217,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                         std::cout << "Podaj nowy rok wydania: ";
                         std::cin >> rok_wydania;
                         std::cin.ignore(256, '\n');
-                        wsk->rok_wydania = rok_wydania;
+                        ksiazki.at(choice - 1).rok_wydania = rok_wydania;
                         std::cout << "Zmieniono!" << std::endl;
                         system("pause");
                         break;
@@ -229,7 +229,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                         std::cin.ignore(256, '\n');
                         if (ocena > 5) ocena = 5;
                         else if (ocena < 0) ocena = 1;
-                        wsk->ocena = ocena;
+                        ksiazki.at(choice - 1).ocena = ocena;
                         std::cout << "Zmieniono!" << std::endl;
                         system("pause");
                         break;
@@ -239,7 +239,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                         std::cout << "Podaj nowe ograniczenie wiekowe: ";
                         std::cin >> min_wiek;
                         std::cin.ignore(256, '\n');
-                        wsk->min_wiek = min_wiek;
+                        ksiazki.at(choice - 1).min_wiek = min_wiek;
                         std::cout << "Zmieniono!" << std::endl;
                         system("pause");
                         break;
@@ -252,7 +252,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                         std::cin.ignore(256, '\n');
                         if (tolower(taknie) == 't') ulubione = true;
                         else ulubione = false;
-                        wsk->ulubione = ulubione;
+                        ksiazki.at(choice - 1).ulubione = ulubione;
                         std::cout << "Zmieniono!" << std::endl;
                         system("pause");
                         break;
@@ -364,7 +364,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 std::string tytul;
                 std::cout << "Podaj nowy tytu³: ";
                 std::getline(std::cin, tytul);
-                wsk->tytul = tytul;
+                filmy.at(choice - 1).tytul = tytul;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -374,7 +374,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 std::cout << "Podaj nowy rok wydania: ";
                 std::cin >> rok_wydania;
                 std::cin.ignore(256, '\n');
-                wsk->rok_wydania = rok_wydania;
+                filmy.at(choice - 1).rok_wydania = rok_wydania;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -386,7 +386,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 std::cin.ignore(256, '\n');
                 if (ocena > 5) ocena = 5;
                 else if (ocena < 0) ocena = 1;
-                wsk->ocena = ocena;
+                filmy.at(choice - 1).ocena = ocena;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -396,7 +396,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 std::cout << "Podaj nowe ograniczenie wiekowe: ";
                 std::cin >> min_wiek;
                 std::cin.ignore(256, '\n');
-                wsk->min_wiek = min_wiek;
+                filmy.at(choice - 1).min_wiek = min_wiek;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -409,7 +409,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 std::cin.ignore(256, '\n');
                 if (tolower(taknie) == 't') ulubione = true;
                 else ulubione = false;
-                wsk->ulubione = ulubione;
+                filmy.at(choice - 1).ulubione = ulubione;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -512,7 +512,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 std::string tytul;
                 std::cout << "Podaj nowy tytu³: ";
                 std::getline(std::cin, tytul);
-                wsk->tytul = tytul;
+                muzyka.at(choice - 1).tytul = tytul;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -522,7 +522,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 std::cout << "Podaj nowy rok wydania: ";
                 std::cin >> rok_wydania;
                 std::cin.ignore(256, '\n');
-                wsk->rok_wydania = rok_wydania;
+                muzyka.at(choice - 1).rok_wydania = rok_wydania;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -534,7 +534,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 std::cin.ignore(256, '\n');
                 if (ocena > 5) ocena = 5;
                 else if (ocena < 0) ocena = 1;
-                wsk->ocena = ocena;
+                muzyka.at(choice - 1).ocena = ocena;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -544,7 +544,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 std::cout << "Podaj nowe ograniczenie wiekowe: ";
                 std::cin >> min_wiek;
                 std::cin.ignore(256, '\n');
-                wsk->min_wiek = min_wiek;
+                muzyka.at(choice - 1).min_wiek = min_wiek;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
@@ -557,7 +557,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 std::cin.ignore(256, '\n');
                 if (tolower(taknie) == 't') ulubione = true;
                 else ulubione = false;
-                wsk->ulubione = ulubione;
+                muzyka.at(choice - 1).ulubione = ulubione;
                 std::cout << "Zmieniono!" << std::endl;
                 system("pause");
                 break;
