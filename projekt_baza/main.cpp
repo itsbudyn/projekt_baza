@@ -20,9 +20,14 @@ int main()
         std::cout << "Menu g³ówne" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Dodaj przedmiot do bazy." << std::endl;
-        std::cout << "2. Przegl¹daj bazê." << std::endl;
+        std::cout << "2. Przegl¹daj bazê.\t\t[do zrobienia]" << std::endl;
         std::cout << "3. Wyszukiwanie." << std::endl;
         std::cout << "4. Edytuj/Usuñ przedmiot z bazy." << std::endl;
+        std::cout << std::endl;
+        std::cout << "5. Zapisz stan bazy. \t\t[do zrobienia] " << std::endl;
+        std::cout << "6. Wczytaj stan bazy.\t\t[do zrobienia] " << std::endl;
+        std::cout << std::endl;
+        std::cout << "9. WYCZYŒÆ BAZÊ" << std::endl;
         std::cout << std::endl;
         std::cout << "0. WyjdŸ." << std::endl;
         std::cout << std::endl;
@@ -104,7 +109,7 @@ int main()
                     case 2: {
                         for (unsigned int i = 0; i < filmy.size(); i++) {
                             if (choice2 == 1) {
-                                if (!ksiazki.at(i).czyUlubione())continue;
+                                if (!filmy.at(i).czyUlubione())continue;
                             }
                             std::cout << std::endl;
                             std::cout << "Film nr. " << i+1 << std::endl;
@@ -117,7 +122,7 @@ int main()
                     case 3: {
                         for (unsigned int i = 0; i < muzyka.size(); i++) {
                             if (choice2 == 1) {
-                                if (!ksiazki.at(i).czyUlubione())continue;
+                                if (!muzyka.at(i).czyUlubione())continue;
                             }
                             std::cout << std::endl;
                             std::cout << "Album muzyczny nr. " << i+1 << std::endl;
@@ -143,6 +148,20 @@ int main()
                 std::cout << "Wybór: ";
                 std::cin >> choice1;
                 std::cin.ignore(256, '\n');
+                switch (choice1) {
+                    case 1: {
+                        szukajKsiazki(ksiazki);
+                        break;
+                    }
+                    case 2: {
+                        szukajFilmu(filmy);
+                        break;
+                    }
+                    case 3: {
+                        szukajAlbumuMuzycznego(muzyka);
+                        break;
+                    }
+                }
                 break;
             }
             case 4: {
@@ -158,6 +177,7 @@ int main()
                 std::cout << "Wybór: ";
                 std::cin >> choice1;
                 std::cin.ignore(256, '\n');
+                system("cls");
                 switch (choice1) {
                     case 1: {
                         edytujKsiazki(ksiazki);
@@ -172,6 +192,24 @@ int main()
                         break;
                     }
                 }
+                break;
+            }
+            case 9: {
+                unsigned char wybor;
+                std::cout << "CZY NA PEWNO WYCZYŒÆ BAZÊ DANYCH W PAMIÊCI PODRÊCZNEJ?" << std::endl;
+                std::cout << "Niezapisane zmiany zostan¹ utracone!" << std::endl;
+                std::cout << std::endl;
+                std::cout << "Wyczyœciæ? [t/N]: ";
+                std::cin >> wybor;
+                std::cin.ignore(256, '\n');
+                if (tolower(wybor) == 't') {
+                    ksiazki.clear();
+                    filmy.clear();
+                    muzyka.clear();
+                    std::cout << "Wyczyszczono" << std::endl;
+                }
+                else std::cout << "Nic nie zosta³o usuniête." << std::endl;
+                system("pause");
                 break;
             }
         }

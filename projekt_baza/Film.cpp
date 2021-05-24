@@ -1,16 +1,16 @@
 #include "Film.h"
 
 void Film::wyswietl() {
-    std::cout << "Tytu³:\t" << this->tytul << std::endl;
-    std::cout << "Re¿yser:\t" << this->rezyser << std::endl;
-    std::cout << "Gatunek: \t" << this->gatunek << std::endl;
-    std::cout << "Rok wydania:\t" << this->rok_wydania << std::endl;
+    std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
+    std::cout << "Re¿yser:\t\t" << this->rezyser << std::endl;
+    std::cout << "Gatunek: \t\t" << this->gatunek << std::endl;
+    std::cout << "Rok wydania:\t\t" << this->rok_wydania << std::endl;
     std::cout << std::endl;
     std::cout << "Czas trwania [m]:\t" << this->czas_trwania << std::endl;
     std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
     std::cout << std::endl;
-    std::cout << "Ocena:\t" << this->ocena << std::endl;
-    std::cout << "Ulubione:\t";
+    std::cout << "Ocena:\t\t\t" << this->ocena << std::endl;
+    std::cout << "Ulubione:\t\t";
     if (this->ulubione == true) std::cout << "Tak";
     else std::cout << "Nie";
     std::cout << std::endl;
