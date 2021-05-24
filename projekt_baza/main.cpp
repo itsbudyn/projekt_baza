@@ -22,7 +22,7 @@ int main()
         std::cout << "1. Dodaj przedmiot do bazy." << std::endl;
         std::cout << "2. Przegl¹daj bazê.\t\t[do zrobienia][wersja podstawowa]" << std::endl;
         std::cout << "3. Wyszukiwanie." << std::endl;
-        std::cout << "4. Edytuj/Usuñ przedmiot z bazy." << std::endl;
+        std::cout << "4. Edytuj przedmiot z bazy." << std::endl;
         std::cout << std::endl;
         std::cout << "5. Zapisz stan bazy. \t\t[do zrobienia] " << std::endl;
         std::cout << "6. Wczytaj stan bazy.\t\t[do zrobienia] " << std::endl;
