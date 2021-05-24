@@ -2,7 +2,7 @@
 #include "Header.h"
 #include "Utwor.h"
 
-class Ksiazka : private Utwor {
+class Ksiazka : public Utwor {
 private:
     unsigned short strony = 0;
     std::string autor;

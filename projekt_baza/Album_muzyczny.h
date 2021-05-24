@@ -2,7 +2,7 @@
 #include "Header.h"
 #include "Utwor.h"
 
-class Album_muzyczny : private Utwor {
+class Album_muzyczny : public Utwor {
 private:
     unsigned short czas_trwania = 0;
     unsigned short utworow = 0;

@@ -2,7 +2,7 @@
 #include "Header.h"
 #include "Utwor.h"
 
-class Film : private Utwor {
+class Film : public Utwor {
 private:
     unsigned short czas_trwania = 0;
     std::string rezyser;
