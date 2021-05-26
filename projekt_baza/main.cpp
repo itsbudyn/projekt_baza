@@ -1,9 +1,9 @@
 #include "Header.h"
-#include "Utwor.cpp"
-#include "Ksiazka.cpp"
-#include "Film.cpp"
-#include "Album_muzyczny.cpp"
-#include "funkcje.cpp"
+#include "Utwor.h"
+#include "Ksiazka.h"
+#include "Film.h"
+#include "Album_muzyczny.h"
+#include "funkcje.h"
 
 int main()
 {

@@ -689,6 +689,8 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
 
 void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
     Utwor* wsk;
+    unsigned short results = 0;
+    unsigned short ksiazek = 0;
     std::cout << "Opcje wyszukiwania ksi¹¿ki: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -713,17 +715,15 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             std::cout << "Podaj tytu³ ksi¹¿ki do znalezienia: ";
             std::getline(std::cin, tytul);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
+                wsk = &ksiazki.at(i);
                 if (ksiazki.at(i).tytul.find(tytul) != std::string::npos) {
-                    wsk = &ksiazki.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
@@ -731,7 +731,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             std::cout << "Podaj autora, którego ksi¹¿ki chcesz wyszukaæ: ";
             std::getline(std::cin, autor);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
                 if (ksiazki.at(i).autor.find(autor) != std::string::npos) {
                     wsk = &ksiazki.at(i);
@@ -739,9 +738,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników"<< std::endl;
-            system("pause");
             break;
         }
         case 3: {
@@ -749,7 +747,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             std::cout << "Podaj wydawnictwo, od którego ksi¹¿ki chcesz wyszukaæ: ";
             std::getline(std::cin, wydawnictwo);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
                 if (ksiazki.at(i).wydawnictwo.find(wydawnictwo) != std::string::npos) {
                     wsk = &ksiazki.at(i);
@@ -757,9 +754,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
@@ -767,7 +763,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             std::cout << "Podaj gatunek ksi¹¿ek, których chcesz wyszukaæ: ";
             std::getline(std::cin, gatunek);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
                 if (ksiazki.at(i).gatunek.find(gatunek) != std::string::npos) {
                     wsk = &ksiazki.at(i);
@@ -775,9 +770,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 5: {
@@ -802,7 +796,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     std::cin >> rok_wydania;
                     std::cin.ignore(256, '\n');
                     std::cout << "Wyniki wyszukiwania: " << std::endl;
-                    unsigned short results = 0;
                     for (unsigned int i = 0; i < ksiazki.size(); i++) {
                         if (ksiazki.at(i).rok_wydania == rok_wydania) {
                             wsk = &ksiazki.at(i);
@@ -810,9 +803,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
+                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
-                    std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                    system("pause");
                     break;
                 }
                 case 2: {
@@ -821,7 +813,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     std::cin >> rok_wydania;
                     std::cin.ignore(256, '\n');
                     std::cout << "Wyniki wyszukiwania: " << std::endl;
-                    unsigned short results = 0;
                     for (unsigned int i = 0; i < ksiazki.size(); i++) {
                         if (ksiazki.at(i).rok_wydania <= rok_wydania) {
                             wsk = &ksiazki.at(i);
@@ -829,9 +820,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
+                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
-                    std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                    system("pause");
                     break;
                 }
                 case 3: {
@@ -840,7 +830,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     std::cin >> rok_wydania;
                     std::cin.ignore(256, '\n');
                     std::cout << "Wyniki wyszukiwania: " << std::endl;
-                    unsigned short results = 0;
                     for (unsigned int i = 0; i < ksiazki.size(); i++) {
                         if (ksiazki.at(i).rok_wydania >= rok_wydania) {
                             wsk = &ksiazki.at(i);
@@ -848,9 +837,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
+                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
-                    std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                    system("pause");
                     break;
                 }
                 case 4: {
@@ -861,7 +849,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     std::cout << "Podaj koniec przedzia³u (domkniêty): ";
                     std::cin >> rok_wydania2;
                     std::cin.ignore(256, '\n');
-                    unsigned short results = 0;
                     for (unsigned int i = 0; i < ksiazki.size(); i++) {
                         if (ksiazki.at(i).rok_wydania >= rok_wydania1 && ksiazki.at(i).rok_wydania <= rok_wydania2) {
                             wsk = &ksiazki.at(i);
@@ -869,9 +856,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
+                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
-                    std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                    system("pause");
                     break;
                 }
             }
@@ -899,7 +885,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).strony == strony) {
                         wsk = &ksiazki.at(i);
@@ -907,9 +892,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 2: {
@@ -918,7 +902,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).strony <= strony) {
                         wsk = &ksiazki.at(i);
@@ -926,9 +909,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 3: {
@@ -937,7 +919,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).strony >= strony) {
                         wsk = &ksiazki.at(i);
@@ -945,9 +926,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 4: {
@@ -958,7 +938,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cout << "Podaj koniec przedzia³u (domkniêty): ";
                 std::cin >> strony2;
                 std::cin.ignore(256, '\n');
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).strony >= strony1 && ksiazki.at(i).strony <= strony2) {
                         wsk = &ksiazki.at(i);
@@ -966,20 +945,18 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             }
             break;
         }
         case 7: {
-            unsigned short min_wiek;
+            unsigned short min_wiek = 0;
             std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie ksi¹¿ki: " << std::endl;
             std::cin >> min_wiek;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
                 if (ksiazki.at(i).min_wiek <= min_wiek) {
                     wsk = &ksiazki.at(i);
@@ -987,9 +964,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 8: {
@@ -1015,7 +991,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).ocena == ocena && ksiazki.at(i).ocena!=0) {
                         wsk = &ksiazki.at(i);
@@ -1023,9 +998,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 2: {
@@ -1033,8 +1007,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
-                std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
+                std::cout << "Wyniki wyszukiwania: " << std::endl;               
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).ocena <= ocena && ksiazki.at(i).ocena != 0) {
                         wsk = &ksiazki.at(i);
@@ -1042,9 +1015,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 3: {
@@ -1053,7 +1025,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).ocena >= ocena && ksiazki.at(i).ocena != 0) {
                         wsk = &ksiazki.at(i);
@@ -1061,9 +1032,8 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 4: {
@@ -1074,7 +1044,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 std::cout << "Podaj koniec przedzia³u (domkniêty): ";
                 std::cin >> ocena2;
                 std::cin.ignore(256, '\n');
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).ocena >= ocena1 && ksiazki.at(i).ocena <= ocena2 && ksiazki.at(i).ocena != 0) {
                         wsk = &ksiazki.at(i);
@@ -1082,13 +1051,11 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             case 5: {
-                unsigned short results = 0;
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
                     if (ksiazki.at(i).ocena==0) {
                         wsk = &ksiazki.at(i);
@@ -1096,19 +1063,23 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
+                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
-                std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-                system("pause");
                 break;
             }
             }
             break;
         }
+        break;
     }
+    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << ksiazek << std::endl;
+    system("pause");
 }
 
 void szukajFilmu(std::vector<Film>& filmy) {
     Utwor* wsk;
+    unsigned short results = 0;
+    unsigned short filmow = 0;
     std::cout << "Opcje wyszukiwania: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -1131,8 +1102,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
         std::string tytul;
         std::cout << "Podaj tytu³ filmu do znalezienia: ";
         std::getline(std::cin, tytul);
-        std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
+        std::cout << "Wyniki wyszukiwania: " << std::endl;      
         for (unsigned int i = 0; i < filmy.size(); i++) {
             if (filmy.at(i).tytul.find(tytul) != std::string::npos) {
                 wsk = &filmy.at(i);
@@ -1140,17 +1110,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 2: {
         std::string rezyser;
         std::cout << "Podaj re¿ysera, którego filmy chcesz wyszukaæ: ";
         std::getline(std::cin, rezyser);
-        std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
+        std::cout << "Wyniki wyszukiwania: " << std::endl;       
         for (unsigned int i = 0; i < filmy.size(); i++) {
             if (filmy.at(i).rezyser.find(rezyser) != std::string::npos) {
                 wsk = &filmy.at(i);
@@ -1158,17 +1126,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 3: {
         std::string gatunek;
         std::cout << "Podaj gatunek filmów, których chcesz wyszukaæ: ";
         std::getline(std::cin, gatunek);
-        std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
+        std::cout << "Wyniki wyszukiwania: " << std::endl;       
         for (unsigned int i = 0; i < filmy.size(); i++) {
             if (filmy.at(i).gatunek.find(gatunek) != std::string::npos) {
                 wsk = &filmy.at(i);
@@ -1176,12 +1142,12 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 4: {
+        unsigned short rok_wydania;
         std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj filmy wydane w podanym roku" << std::endl;
@@ -1197,13 +1163,11 @@ void szukajFilmu(std::vector<Film>& filmy) {
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
-        case 1: {
-            unsigned short rok_wydania;
+        case 1: { 
             std::cout << "Podaj rok wydania [wydane w]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;           
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).rok_wydania == rok_wydania) {
                     wsk = &filmy.at(i);
@@ -1211,18 +1175,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            unsigned short rok_wydania;
             std::cout << "Podaj rok wydania [wydane przed i w]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;           
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).rok_wydania <= rok_wydania) {
                     wsk = &filmy.at(i);
@@ -1230,18 +1191,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            unsigned short rok_wydania;
             std::cout << "Podaj rok wydania [wydane w i po]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;            
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).rok_wydania >= rok_wydania) {
                     wsk = &filmy.at(i);
@@ -1249,36 +1207,34 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            unsigned short rok_wydania1, rok_wydania2;
+            unsigned short rok_wydania1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> rok_wydania1;
+            std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> rok_wydania2;
-            std::cin.ignore(256, '\n');
-            unsigned short results = 0;
+            std::cin >> rok_wydania1;
+            std::cin.ignore(256, '\n');            
             for (unsigned int i = 0; i < filmy.size(); i++) {
-                if (filmy.at(i).rok_wydania >= rok_wydania1 && filmy.at(i).rok_wydania <= rok_wydania2) {
+                if (filmy.at(i).rok_wydania >= rok_wydania && filmy.at(i).rok_wydania <= rok_wydania1) {
                     wsk = &filmy.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
         break;
     }
     case 5: {
+        unsigned short czas_trwania;
         std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj filmy trwaj¹ce tyle" << std::endl;
@@ -1295,12 +1251,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
         system("cls");
         switch (choice1) {
         case 1: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [dok³adnie ile]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;          
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).czas_trwania == czas_trwania) {
                     wsk = &filmy.at(i);
@@ -1308,18 +1262,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [tyle lub mniej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;            
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).czas_trwania <= czas_trwania) {
                     wsk = &filmy.at(i);
@@ -1327,18 +1278,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [tyle lub wiêcej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).czas_trwania >= czas_trwania) {
                     wsk = &filmy.at(i);
@@ -1346,30 +1294,27 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            unsigned short czas_trwania1, czas_trwania2;
+            unsigned short czas_trwania1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> czas_trwania1;
+            std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> czas_trwania2;
-            std::cin.ignore(256, '\n');
-            unsigned short results = 0;
+            std::cin >> czas_trwania1;
+            std::cin.ignore(256, '\n');           
             for (unsigned int i = 0; i < filmy.size(); i++) {
-                if (filmy.at(i).czas_trwania >= czas_trwania1 && filmy.at(i).czas_trwania <= czas_trwania2) {
+                if (filmy.at(i).czas_trwania >= czas_trwania && filmy.at(i).czas_trwania <= czas_trwania1) {
                     wsk = &filmy.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
@@ -1379,8 +1324,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
         unsigned short min_wiek;
         std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie filmy: " << std::endl;
         std::cin >> min_wiek;
-        std::cin.ignore(256, '\n');
-        unsigned short results = 0;
+        std::cin.ignore(256, '\n');        
         for (unsigned int i = 0; i < filmy.size(); i++) {
             if (filmy.at(i).min_wiek <= min_wiek) {
                 wsk = &filmy.at(i);
@@ -1388,12 +1332,12 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 7: {
+        double ocena;
         std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj filmy o dok³adnie takiej ocenie" << std::endl;
@@ -1411,12 +1355,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
         system("cls");
         switch (choice1) {
         case 1: {
-            double ocena;
             std::cout << "Podaj ocenê [dok³adnie tak¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;           
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).ocena == ocena && filmy.at(i).ocena != 0) {
                     wsk = &filmy.at(i);
@@ -1424,18 +1366,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            double ocena;
             std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
-            std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
+            std::cout << "Wyniki wyszukiwania: " << std::endl;           
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).ocena <= ocena && filmy.at(i).ocena != 0) {
                     wsk = &filmy.at(i);
@@ -1443,18 +1382,15 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            double ocena;
             std::cout << "Podaj ocenê [lepsz¹ lub równ¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).ocena >= ocena && filmy.at(i).ocena != 0) {
                     wsk = &filmy.at(i);
@@ -1462,34 +1398,30 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            double ocena1, ocena2;
+            double ocena1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> ocena1;
+            std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> ocena2;
+            std::cin >> ocena1;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < filmy.size(); i++) {
-                if (filmy.at(i).ocena >= ocena1 && filmy.at(i).ocena <= ocena2 && filmy.at(i).ocena != 0) {
+                if (filmy.at(i).ocena >= ocena && filmy.at(i).ocena <= ocena1 && filmy.at(i).ocena != 0) {
                     wsk = &filmy.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 5: {
-            unsigned short results = 0;
             for (unsigned int i = 0; i < filmy.size(); i++) {
                 if (filmy.at(i).ocena == 0) {
                     wsk = &filmy.at(i);
@@ -1497,19 +1429,22 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
         break;
     }
     }
+    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << filmow << std::endl;
+    system("pause");
 }
 
 void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     Utwor* wsk;
+    unsigned short results = 0;
+    unsigned short albumow = 0;
     std::cout << "Opcje wyszukiwania: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -1534,7 +1469,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cout << "Podaj tytu³ albumu muzycznego do znalezienia: ";
         std::getline(std::cin, tytul);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
             if (muzyka.at(i).tytul.find(tytul) != std::string::npos) {
                 wsk = &muzyka.at(i);
@@ -1542,9 +1476,8 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 2: {
@@ -1552,7 +1485,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cout << "Podaj autora, którego album muzyczny chcesz wyszukaæ: ";
         std::getline(std::cin, autor);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
             if (muzyka.at(i).autor.find(autor) != std::string::npos) {
                 wsk = &muzyka.at(i);
@@ -1560,9 +1492,8 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 3: {
@@ -1570,7 +1501,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cout << "Podaj gatunek muzyczny, którego chcesz wyszukaæ: ";
         std::getline(std::cin, gatunek);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
-        unsigned short results = 0;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
             if (muzyka.at(i).gatunek.find(gatunek) != std::string::npos) {
                 wsk = &muzyka.at(i);
@@ -1578,12 +1508,12 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 4: {
+        unsigned short rok_wydania;
         std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj albumy wydane w podanym roku" << std::endl;
@@ -1600,12 +1530,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         system("cls");
         switch (choice1) {
         case 1: {
-            unsigned short rok_wydania;
             std::cout << "Podaj rok wydania [wydane w]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).rok_wydania == rok_wydania) {
                     wsk = &muzyka.at(i);
@@ -1613,18 +1541,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            unsigned short rok_wydania;
             std::cout << "Podaj rok wydania [wydane przed i w]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).rok_wydania <= rok_wydania) {
                     wsk = &muzyka.at(i);
@@ -1632,18 +1557,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            unsigned short rok_wydania;
             std::cout << "Podaj rok wydania [wydane w i po]: ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).rok_wydania >= rok_wydania) {
                     wsk = &muzyka.at(i);
@@ -1651,36 +1573,34 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            unsigned short rok_wydania1, rok_wydania2;
+            unsigned short rok_wydania1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> rok_wydania1;
+            std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> rok_wydania2;
+            std::cin >> rok_wydania1;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
-                if (muzyka.at(i).rok_wydania >= rok_wydania1 && muzyka.at(i).rok_wydania <= rok_wydania2) {
+                if (muzyka.at(i).rok_wydania >= rok_wydania && muzyka.at(i).rok_wydania <= rok_wydania1) {
                     wsk = &muzyka.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
         break;
     }
     case 5: {
+        unsigned short czas_trwania;
         std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj albumy trwaj¹ce dok³adnie tyle" << std::endl;
@@ -1697,12 +1617,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         system("cls");
         switch (choice1) {
         case 1: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [dok³adnie ile]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).czas_trwania == czas_trwania) {
                     wsk = &muzyka.at(i);
@@ -1710,18 +1628,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [tyle lub mniej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).czas_trwania <= czas_trwania) {
                     wsk = &muzyka.at(i);
@@ -1729,18 +1644,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            unsigned short czas_trwania;
             std::cout << "Podaj czas trwania w minutach [tyle lub wiêcej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).czas_trwania >= czas_trwania) {
                     wsk = &muzyka.at(i);
@@ -1748,36 +1660,34 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            unsigned short czas_trwania1, czas_trwania2;
+            unsigned short czas_trwania1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> czas_trwania1;
+            std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> czas_trwania2;
+            std::cin >> czas_trwania1;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
-                if (muzyka.at(i).czas_trwania >= czas_trwania1 && muzyka.at(i).czas_trwania <= czas_trwania2) {
+                if (muzyka.at(i).czas_trwania >= czas_trwania && muzyka.at(i).czas_trwania <= czas_trwania1) {
                     wsk = &muzyka.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
         break;
     }
     case 6: {
+        unsigned short utworow;
         std::cout << "W jaki sposób wyszukaæ po iloœci utworów?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj albumy, które maj¹ dok³adnie tyle utworów" << std::endl;
@@ -1793,13 +1703,11 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
-        case 1: {
-            unsigned short utworow;
+        case 1: {           
             std::cout << "Podaj iloœæ utworów [dok³adnie ile]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).utworow == utworow) {
                     wsk = &muzyka.at(i);
@@ -1807,18 +1715,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            unsigned short utworow;
             std::cout << "Podaj iloœæ utworów [tyle lub mniej]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).utworow <= utworow) {
                     wsk = &muzyka.at(i);
@@ -1826,18 +1731,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            unsigned short utworow;
             std::cout << "Podaj iloœæ utworów [tyle lub wiêcej]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).utworow >= utworow) {
                     wsk = &muzyka.at(i);
@@ -1845,30 +1747,27 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            unsigned short utworow1, utworow2;
+            unsigned short utworow1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> utworow1;
+            std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> utworow2;
+            std::cin >> utworow1;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
-                if (muzyka.at(i).utworow >= utworow1 && muzyka.at(i).utworow <= utworow2) {
+                if (muzyka.at(i).utworow >= utworow && muzyka.at(i).utworow <= utworow1) {
                     wsk = &muzyka.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
@@ -1879,7 +1778,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie albumy muzyczne: " << std::endl;
         std::cin >> min_wiek;
         std::cin.ignore(256, '\n');
-        unsigned short results = 0;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
             if (muzyka.at(i).min_wiek <= min_wiek) {
                 wsk = &muzyka.at(i);
@@ -1887,12 +1785,12 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
+            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
-        std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-        system("pause");
         break;
     }
     case 8: {
+        double ocena;
         std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj albumy o dok³adnie takiej ocenie" << std::endl;
@@ -1910,12 +1808,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         system("cls");
         switch (choice1) {
         case 1: {
-            double ocena;
             std::cout << "Podaj ocenê [dok³adnie tak¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).ocena == ocena && muzyka.at(i).ocena != 0) {
                     wsk = &muzyka.at(i);
@@ -1923,18 +1819,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 2: {
-            double ocena;
             std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).ocena <= ocena && muzyka.at(i).ocena != 0) {
                     wsk = &muzyka.at(i);
@@ -1942,18 +1835,15 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 3: {
-            double ocena;
             std::cout << "Podaj ocenê [lepsz¹ lub równ¹]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).ocena >= ocena && muzyka.at(i).ocena != 0) {
                     wsk = &muzyka.at(i);
@@ -1961,34 +1851,30 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         case 4: {
-            double ocena1, ocena2;
+            double ocena1;
             std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
-            std::cin >> ocena1;
+            std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Podaj koniec przedzia³u (domkniêty): ";
-            std::cin >> ocena2;
+            std::cin >> ocena1;
             std::cin.ignore(256, '\n');
-            unsigned short results = 0;
             for (unsigned int i = 0; i < muzyka.size(); i++) {
-                if (muzyka.at(i).ocena >= ocena1 && muzyka.at(i).ocena <= ocena2 && muzyka.at(i).ocena != 0) {
+                if (muzyka.at(i).ocena >= ocena && muzyka.at(i).ocena <= ocena1 && muzyka.at(i).ocena != 0) {
                     wsk = &muzyka.at(i);
                     std::cout << std::endl;
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
-        case 5: {
-            unsigned short results = 0;
+        case 5: {           
             for (unsigned int i = 0; i < muzyka.size(); i++) {
                 if (muzyka.at(i).ocena == 0) {
                     wsk = &muzyka.at(i);
@@ -1996,13 +1882,14 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
+                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
-            std::cout << "Koniec wyszukiwania - " << results << " wyników" << std::endl;
-            system("pause");
             break;
         }
         }
         break;
     }
     }
+    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << albumow << std::endl;
+    system("pause");
 }

@@ -11,14 +11,14 @@ private:
     static unsigned int liczbaKsiazek;
 
 public:
-    inline void wyswietl();
+    void wyswietl();
     friend void edytujKsiazki(std::vector<Ksiazka>& ksiazki);
     friend void szukajKsiazki(std::vector<Ksiazka>& ksiazki);
-    inline unsigned int zwrocLiczbeKsiazek();
+    unsigned int zwrocLiczbeKsiazek();
 
-    inline Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_gatunek);
-    inline Ksiazka(const Ksiazka& x);
-    inline ~Ksiazka();
+    Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_gatunek);
+    Ksiazka(const Ksiazka& x);
+    ~Ksiazka();
     
-    inline Ksiazka& operator=(const Ksiazka& x);
+    Ksiazka& operator=(const Ksiazka& x);
 };
