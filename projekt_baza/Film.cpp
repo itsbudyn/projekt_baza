@@ -27,3 +27,8 @@ Film::Film(const Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.
     this->rezyser = x.rezyser;
     this->gatunek = x.gatunek;
 }
+
+Film& Film::operator=(const Film& x) {
+    Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek);
+    return n;
+}

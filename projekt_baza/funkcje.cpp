@@ -108,7 +108,6 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     bool ulubione; 
     unsigned short czas_trwania; 
     unsigned short utworow; 
-    bool czy_single; 
     std::string autor; 
     std::string gatunek; 
 
@@ -132,8 +131,6 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     std::cout << "Podaj iloœæ utworów w albumie: ";
     std::cin >> utworow;
     std::cin.ignore(256, '\n');
-    if (utworow == 1)czy_single = true;
-    else czy_single = false;
 
     std::cout << "Podaj minimalne ograniczenie wiekowe: ";
     std::cin >> min_wiek;
@@ -150,7 +147,7 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     if (tolower(wybor) == 't') ulubione = true;
     else ulubione = false;
 
-    Album_muzyczny x(tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, czy_single, autor, gatunek);
+    Album_muzyczny x(tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
     x.wyswietl();
     a.push_back(x);
     system("pause");
@@ -417,7 +414,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
             }
             case 4: {
                 unsigned short min_wiek;
-                std::cout << "Podaj nowe ograniczenie wiekowe: "; // weec
+                std::cout << "Podaj nowe ograniczenie wiekowe: ";
                 std::cin >> min_wiek;
                 std::cin.ignore(256, '\n');
                 filmy.at(choice - 1).min_wiek = min_wiek;

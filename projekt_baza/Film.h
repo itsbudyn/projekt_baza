@@ -15,4 +15,5 @@ public:
     
     inline Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek);
     inline Film(const Film& x);
+    inline Film& operator=(const Film& x);
 };

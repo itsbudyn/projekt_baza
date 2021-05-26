@@ -30,3 +30,8 @@ Ksiazka::Ksiazka(const Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min
     this->wydawnictwo = x.wydawnictwo;
     this->gatunek = x.gatunek;
 }
+
+Ksiazka& Ksiazka::operator=(const Ksiazka& x) {
+    Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek);
+    return n;
+}
