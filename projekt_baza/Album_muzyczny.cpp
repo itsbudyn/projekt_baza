@@ -1,5 +1,7 @@
 #include "Album_muzyczny.h"
 
+unsigned int Album_muzyczny::liczbaAlbumow = 0;
+
 void Album_muzyczny::wyswietl() {
     std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
@@ -17,6 +19,10 @@ void Album_muzyczny::wyswietl() {
     std::cout << std::endl;
 }
 
+unsigned int Album_muzyczny::zwrocLiczbeAlbumow() {
+    return liczbaAlbumow;
+}
+
 Album_muzyczny::Album_muzyczny(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, unsigned short u_utworow, std::string u_autor, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
     this->czas_trwania = u_czas_trwania;
     this->utworow = u_utworow;
@@ -29,6 +35,10 @@ Album_muzyczny::Album_muzyczny(const Album_muzyczny& x) :Utwor(x.tytul, x.rok_wy
     this->utworow = x.utworow;
     this->autor = x.autor;
     this->gatunek = x.gatunek;
+}
+
+Album_muzyczny::~Album_muzyczny() {
+    liczbaAlbumow--;
 }
 
 Album_muzyczny& Album_muzyczny::operator=(const Album_muzyczny& x) {

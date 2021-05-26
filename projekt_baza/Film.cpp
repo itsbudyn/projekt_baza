@@ -1,5 +1,7 @@
 #include "Film.h"
 
+unsigned int Film::liczbaFilmow = 0;
+
 void Film::wyswietl() {
     std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
     std::cout << "Re¿yser:\t\t" << this->rezyser << std::endl;
@@ -16,16 +18,26 @@ void Film::wyswietl() {
     std::cout << std::endl;
 }
 
+unsigned int Film::zwrocLiczbeFilmow() {
+    return liczbaFilmow;
+}
+
 Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
+    liczbaFilmow++;
     this->czas_trwania = u_czas_trwania;
     this->rezyser = u_rezyser;
     this->gatunek = u_gatunek;
 }
 
 Film::Film(const Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
+    liczbaFilmow++;
     this->czas_trwania = x.czas_trwania;
     this->rezyser = x.rezyser;
     this->gatunek = x.gatunek;
+}
+
+Film::~Film() {
+    liczbaFilmow--;
 }
 
 Film& Film::operator=(const Film& x) {

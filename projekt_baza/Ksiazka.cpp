@@ -1,5 +1,7 @@
 #include "Ksiazka.h"
 
+unsigned int Ksiazka::liczbaKsiazek = 0;
+
 void Ksiazka::wyswietl() {
     std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
@@ -17,7 +19,12 @@ void Ksiazka::wyswietl() {
     std::cout << std::endl;
 }
 
+unsigned int Ksiazka::zwrocLiczbeKsiazek() {
+    return liczbaKsiazek;
+}
+
 Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
+    liczbaKsiazek++;
     this->strony = u_strony;
     this->autor = u_autor;
     this->wydawnictwo = u_wydawnictwo;
@@ -25,10 +32,15 @@ Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_oce
 }
 
 Ksiazka::Ksiazka(const Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
+    liczbaKsiazek++;
     this->strony = x.strony;
     this->autor = x.autor;
     this->wydawnictwo = x.wydawnictwo;
     this->gatunek = x.gatunek;
+}
+
+inline Ksiazka::~Ksiazka() {
+    liczbaKsiazek--;
 }
 
 Ksiazka& Ksiazka::operator=(const Ksiazka& x) {

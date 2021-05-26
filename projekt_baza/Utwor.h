@@ -9,8 +9,13 @@ protected:
     unsigned short min_wiek = 0;
     bool ulubione = false;
 
+    static unsigned int liczbaUtworow;
+
 public:
     virtual void wyswietl() = 0;
     inline bool czyUlubione();
+    inline unsigned int zwrocLiczbeUtworow();
+
     inline Utwor(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione);
+    inline ~Utwor();
 };
