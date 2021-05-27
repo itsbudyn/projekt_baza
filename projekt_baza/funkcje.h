@@ -15,3 +15,11 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka);
 void szukajKsiazki(std::vector<Ksiazka>& ksiazki);
 void szukajFilmu(std::vector<Film>& filmy);
 void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka);
+
+void zapiszKsiazki(const std::vector<Ksiazka>& db, const std::string name);
+void zapiszFilmy(const std::vector<Ksiazka>& db, const std::string name);
+void zapiszMuzyke(const std::vector<Album_muzyczny>& db, const std::string name);
+
+void wczytajKsiazki(std::vector<Ksiazka>& db, const std::string name);
+void wczytajFilmy(std::vector<Film>& db, const std::string name);
+void wczytajMuzyke(std::vector<Album_muzyczny>& db, const std::string name);

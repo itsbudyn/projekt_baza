@@ -24,8 +24,8 @@ int main()
         std::cout << "3. Wyszukiwanie." << std::endl;
         std::cout << "4. Edytuj przedmiot z bazy." << std::endl;
         std::cout << std::endl;
-        std::cout << "5. Zapisz stan bazy. \t\t[do zrobienia] " << std::endl;
-        std::cout << "6. Wczytaj stan bazy.\t\t[do zrobienia] " << std::endl;
+        std::cout << "5. Zapisz stan bazy." << std::endl;
+        std::cout << "6. Wczytaj stan bazy." << std::endl;
         std::cout << std::endl;
         std::cout << "9. WYCZYŒÆ BAZÊ" << std::endl;
         std::cout << std::endl;
@@ -192,6 +192,43 @@ int main()
                         break;
                     }
                 }
+                break;
+            }
+            case 5: {
+                std::string name;
+                std::cout << "Podaj nazwê, pod któr¹ chcesz zapisaæ bazê." << std::endl;
+                std::cout << "Bazy zostan¹ zapisane jako 3 pliki .csv" << std::endl;
+                std::cout << std::endl;
+                std::cout << "[NAZWA]_k.csv\tBaza ksi¹zek" << std::endl;
+                std::cout << "[NAZWA]_f.csv\tBaza filmów" << std::endl;
+                std::cout << "[NAZWA]_m.csv\tBaza albumów muzycznych" << std::endl;
+                std::cout << std::endl;
+                std::cout << "Nazwa: ";
+                std::getline(std::cin, name);
+                zapiszKsiazki(ksiazki, name);
+                zapiszFilmy(filmy, name);
+                zapiszMuzyke(muzyka, name);
+                std::cout << "Ukoñczono zapisywanie!" << std::endl;
+                system("pause");
+                break;
+            }
+            case 6: {
+                std::string name;
+                std::cout << "Podaj nazwê bazy, któr¹ chcesz wczytaæ." << std::endl;
+                std::cout << "Nale¿y podaæ nazwê bazy przed znakiem _." << std::endl;
+                std::cout << "Zostan¹ wczytane 3 bazy naraz." << std::endl;
+                std::cout << std::endl;
+                std::cout << "[NAZWA]_k.csv\tBaza ksi¹zek" << std::endl;
+                std::cout << "[NAZWA]_f.csv\tBaza filmów" << std::endl;
+                std::cout << "[NAZWA]_m.csv\tBaza albumów muzycznych" << std::endl;
+                std::cout << std::endl;
+                std::cout << "Nazwa: ";
+                std::getline(std::cin, name);
+                wczytajKsiazki(ksiazki, name);
+                wczytajFilmy(filmy, name);
+                wczytajMuzyke(muzyka, name);
+                std::cout << "Ukoñczono wczytywanie!" << std::endl;
+                system("pause");
                 break;
             }
             case 9: {

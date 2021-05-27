@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/projekt_baza/baza1_k.csv
+/projekt_baza/baza1_f.csv
+/projekt_baza/baza1_m.csv

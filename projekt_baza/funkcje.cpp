@@ -1893,3 +1893,224 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     std::cout << "Koniec wyszukiwania - " << results << " wyników z " << albumow << std::endl;
     system("pause");
 }
+
+// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- uk³ad obiektu typu ksi¹zka
+void zapiszKsiazki(const std::vector<Ksiazka>& db, const std::string name) {
+    std::fstream plik;
+    const std::string filename = name + "_k.csv";
+    plik.open(filename, std::ios::out);
+    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Iloœæ stron\",\"Autor\",\"Wydawnictwo\",\"Gatunek\"" << std::endl;
+    for (unsigned int i = 0; i < db.size(); i++) {
+        if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
+        plik << ',';
+        if (db.at(i).rok_wydania != NULL) plik << db.at(i).rok_wydania;
+        plik << ',';
+        if (db.at(i).ocena != NULL) plik << db.at(i).ocena;
+        plik << ',';
+        if (db.at(i).min_wiek != NULL)plik << db.at(i).min_wiek;
+        plik << ',';
+        if (db.at(i).ulubione != NULL)plik << db.at(i).ulubione;
+        plik << ',';
+        if (db.at(i).strony != NULL)plik << db.at(i).strony;
+        plik << ',';
+        if (db.at(i).autor != "\0")plik << db.at(i).autor;
+        plik << ',';
+        if (db.at(i).wydawnictwo != "\0")plik << db.at(i).wydawnictwo;
+        plik << ',';
+        if (db.at(i).gatunek != "\0")plik << db.at(i).gatunek;
+        plik << ',';
+    }
+    plik.close();
+    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+}
+
+//Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek); <- uk³ad obiektu typu film
+void zapiszFilmy(const std::vector<Film>& db, const std::string name) {
+    std::fstream plik;
+    const std::string filename = name + "_f.csv";
+    plik.open(filename, std::ios::out);
+    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"Re¿yser\",\"Gatunek\"" << std::endl;
+    for (unsigned int i = 0; i < db.size(); i++) {
+        if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
+        plik << ',';
+        if (db.at(i).rok_wydania != NULL) plik << db.at(i).rok_wydania;
+        plik << ',';
+        if (db.at(i).ocena != NULL) plik << db.at(i).ocena;
+        plik << ',';
+        if (db.at(i).min_wiek != NULL)plik << db.at(i).min_wiek;
+        plik << ',';
+        if (db.at(i).ulubione != NULL)plik << db.at(i).ulubione;
+        plik << ',';
+        if (db.at(i).czas_trwania != NULL)plik << db.at(i).czas_trwania;
+        plik << ',';
+        if (db.at(i).rezyser != "\0")plik << db.at(i).rezyser;
+        plik << ',';
+        if (db.at(i).gatunek != "\0")plik << db.at(i).gatunek;
+        plik << ',';
+    }
+    plik.close();
+    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+}
+
+//Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- uk³ad obiektu typu album_muzyczny
+void zapiszMuzyke(const std::vector<Album_muzyczny>& db, const std::string name) {
+    std::fstream plik;
+    const std::string filename = name + "_m.csv";
+    plik.open(filename, std::ios::out);
+    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"Liczba utworów\",\"Autor\",\"Gatunek\"" << std::endl;
+    for (unsigned int i = 0; i < db.size(); i++) {
+        if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
+        plik << ',';
+        if (db.at(i).rok_wydania != NULL) plik << db.at(i).rok_wydania;
+        plik << ',';
+        if (db.at(i).ocena != NULL) plik << db.at(i).ocena;
+        plik << ',';
+        if (db.at(i).min_wiek != NULL)plik << db.at(i).min_wiek;
+        plik << ',';
+        if (db.at(i).ulubione != NULL)plik << db.at(i).ulubione;
+        plik << ',';
+        if (db.at(i).czas_trwania != NULL)plik << db.at(i).czas_trwania;
+        plik << ',';
+        if (db.at(i).utworow != NULL)plik << db.at(i).utworow;
+        plik << ',';
+        if (db.at(i).autor != "\0")plik << db.at(i).autor;
+        plik << ',';
+        if (db.at(i).gatunek != "\0")plik << db.at(i).gatunek;
+        plik << ',';
+    }
+    plik.close();
+    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+}
+
+// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- uk³ad obiektu typu ksi¹zka
+void wczytajKsiazki(std::vector<Ksiazka>& db, const std::string name) {
+
+    std::string tytul="\0";
+    unsigned short rok_wydania = 0;
+    double ocena = 0;
+    unsigned short min_wiek = 0;
+    bool ulubione = false;
+    unsigned short strony = 0;
+    std::string autor;
+    std::string wydawnictwo;
+    std::string gatunek;
+
+    unsigned int linecount = 1;
+    std::fstream plik;
+    std::string wartosc, rekord;
+    std::vector<std::string> przedmiot;
+    std::string filename = name + "_k.csv";
+    plik.open(filename, std::ios::in);
+    while (getline(plik, wartosc)) {
+        std::stringstream liniaStream(wartosc);
+        while (getline(liniaStream, rekord, ',')) {
+            przedmiot.push_back(rekord);
+        }
+        tytul = przedmiot.at(0);
+        rok_wydania = atoi(przedmiot.at(1).c_str());
+        ocena = atof(przedmiot.at(2).c_str());
+        min_wiek = atoi(przedmiot.at(3).c_str());
+        ulubione = atoi(przedmiot.at(4).c_str());
+        strony = atoi(przedmiot.at(5).c_str());
+        autor = przedmiot.at(6);
+        wydawnictwo = przedmiot.at(7);
+        gatunek = przedmiot.at(8);
+
+        if (linecount != 1) {
+            Ksiazka n(tytul, rok_wydania, ocena, min_wiek, ulubione, strony, autor, wydawnictwo, gatunek);
+            db.push_back(n);
+        }
+        przedmiot.clear();
+        linecount++;
+    }
+    plik.close();
+    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+}
+
+// Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek) <- uk³ad obiektu typu film
+void wczytajFilmy(std::vector<Film>& db, const std::string name) {
+
+    std::string tytul = "\0";
+    unsigned short rok_wydania = 0;
+    double ocena = 0;
+    unsigned short min_wiek = 0;
+    bool ulubione = false;
+    unsigned short czas_trwania = 0;
+    std::string rezyser;
+    std::string gatunek;
+
+    unsigned int linecount = 1;
+    std::fstream plik;
+    std::string wartosc, rekord;
+    std::vector<std::string> przedmiot;
+    std::string filename = name + "_f.csv";
+    plik.open(filename, std::ios::in);
+    while (getline(plik, wartosc)) {
+        std::stringstream liniaStream(wartosc);
+        while (getline(liniaStream, rekord, ',')) {
+            przedmiot.push_back(rekord);
+        }
+        tytul = przedmiot.at(0);
+        rok_wydania = atoi(przedmiot.at(1).c_str());
+        ocena = atof(przedmiot.at(2).c_str());
+        min_wiek = atoi(przedmiot.at(3).c_str());
+        ulubione = atoi(przedmiot.at(4).c_str());
+        czas_trwania = atoi(przedmiot.at(5).c_str());
+        rezyser = przedmiot.at(6);
+        gatunek = przedmiot.at(7);
+
+        if (linecount != 1) {
+            Film n(tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, rezyser, gatunek);
+            db.push_back(n);
+        }
+        przedmiot.clear();
+        linecount++;
+    }
+    plik.close();
+    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+}
+
+// Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- uk³ad obiektu typu album_muzyczny
+void wczytajMuzyke(std::vector<Album_muzyczny>& db, const std::string name) {
+
+    std::string tytul = "\0";
+    unsigned short rok_wydania = 0;
+    double ocena = 0;
+    unsigned short min_wiek = 0;
+    bool ulubione = false;
+    unsigned short czas_trwania = 0;
+    unsigned short utworow = 0;
+    std::string autor;
+    std::string gatunek;
+
+    unsigned int linecount = 1;
+    std::fstream plik;
+    std::string wartosc, rekord;
+    std::vector<std::string> przedmiot;
+    std::string filename = name + "_m.csv";
+    plik.open(filename, std::ios::in);
+    while (getline(plik, wartosc)) {
+        std::stringstream liniaStream(wartosc);
+        while (getline(liniaStream, rekord, ',')) {
+            przedmiot.push_back(rekord);
+        }
+        tytul = przedmiot.at(0);
+        rok_wydania = atoi(przedmiot.at(1).c_str());
+        ocena = atof(przedmiot.at(2).c_str());
+        min_wiek = atoi(przedmiot.at(3).c_str());
+        ulubione = atoi(przedmiot.at(4).c_str());
+        czas_trwania = atoi(przedmiot.at(5).c_str());
+        utworow = atoi(przedmiot.at(6).c_str());
+        autor = przedmiot.at(7);
+        gatunek = przedmiot.at(8);
+
+        if (linecount != 1) {
+            Album_muzyczny n(tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
+            db.push_back(n);
+        }
+        przedmiot.clear();
+        linecount++;
+    }
+    plik.close();
+    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+}
