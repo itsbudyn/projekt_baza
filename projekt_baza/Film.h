@@ -16,6 +16,7 @@ public:
     friend void zapiszFilmy(const std::vector<Film>& db, const std::string name);
     unsigned int zwrocLiczbeFilmow();
     
+    Film();
     Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek);
     Film(const Film& x);
     ~Film();

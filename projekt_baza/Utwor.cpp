@@ -10,6 +10,10 @@ unsigned int Utwor::zwrocLiczbeUtworow() {
     return liczbaUtworow;
 }
 
+Utwor::Utwor() {
+    liczbaUtworow++;
+}
+
 Utwor::Utwor(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione) {
     liczbaUtworow++;
     this->tytul = u_tytul;

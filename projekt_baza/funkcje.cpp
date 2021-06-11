@@ -173,7 +173,8 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
         std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
         std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Usuñ przedmiot" << std::endl;
+        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
+        std::cout << "4. Usuñ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
@@ -311,6 +312,22 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                 break;
             }
             case 3: {
+                std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
+                std::cout << "Wybór: ";
+                unsigned short wybor;
+                std::cin >> wybor;
+                std::cin.ignore(256, '\n');
+                if (wybor == 1) {
+                    Ksiazka nowa;
+                    nowa = ksiazki.at(choice - 1);
+                    ksiazki.push_back(nowa);
+                    std::cout << "Skopiowano!" << std::endl;
+                }
+                else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+                system("pause");
+                break;
+            }
+            case 4: {
                 std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
                 std::cout << "Wybór: ";
                 unsigned short wybor;
@@ -354,7 +371,8 @@ void edytujFilmy(std::vector<Film>& filmy) {
         std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
         std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Usuñ przedmiot" << std::endl;
+        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
+        std::cout << "4. Usuñ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
@@ -482,6 +500,22 @@ void edytujFilmy(std::vector<Film>& filmy) {
             break;
         }
         case 3: {
+            std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "Wybór: ";
+            unsigned short wybor;
+            std::cin >> wybor;
+            std::cin.ignore(256, '\n');
+            if (wybor == 1) {
+                Film nowy;
+                nowy = filmy.at(choice - 1);
+                filmy.push_back(nowy);
+                std::cout << "Skopiowano!" << std::endl;
+            }
+            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            system("pause");
+            break;
+        }
+        case 4: {
             std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
             std::cout << "Wybór: ";
             unsigned short wybor;
@@ -525,7 +559,8 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
         std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
         std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Usuñ przedmiot" << std::endl;
+        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
+        std::cout << "4. Usuñ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
@@ -664,6 +699,22 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 3: {
+            std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "Wybór: ";
+            unsigned short wybor;
+            std::cin >> wybor;
+            std::cin.ignore(256, '\n');
+            if (wybor == 1) {
+                Album_muzyczny nowy;
+                nowy=muzyka.at(choice - 1);
+                muzyka.push_back(nowy);
+                std::cout << "Skopiowano!" << std::endl;
+            }
+            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            system("pause");
+            break;
+        }
+        case 4: {
             std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
             std::cout << "Wybór: ";
             unsigned short wybor;

@@ -8,10 +8,10 @@ void Film::wyswietl() {
     std::cout << "Gatunek: \t\t" << this->gatunek << std::endl;
     std::cout << "Rok wydania:\t\t" << this->rok_wydania << std::endl;
     std::cout << std::endl;
-    std::cout << "Czas trwania [m]:\t" << this->czas_trwania << std::endl;
-    std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
+    std::cout << "Czas trwania:\t\t" << this->czas_trwania << " minut" << std::endl;
+    std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << "+" << std::endl;
     std::cout << std::endl;
-    std::cout << "Ocena:\t\t\t" << this->ocena << std::endl;
+    std::cout << "Ocena:\t\t\t" << this->ocena << " / 5" << std::endl;
     std::cout << "Ulubione:\t\t";
     if (this->ulubione == true) std::cout << "Tak";
     else std::cout << "Nie";
@@ -20,6 +20,10 @@ void Film::wyswietl() {
 
 unsigned int Film::zwrocLiczbeFilmow() {
     return liczbaFilmow;
+}
+
+Film::Film() {
+    liczbaFilmow++;
 }
 
 Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
@@ -41,6 +45,16 @@ Film::~Film() {
 }
 
 Film& Film::operator=(const Film& x) {
-    Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek);
-    return n;
+    if (&x == this)return *this;
+
+    tytul = x.tytul;
+    rok_wydania = x.rok_wydania;
+    ocena = x.ocena;
+    min_wiek = x.min_wiek;
+    ulubione = x.ulubione;
+    czas_trwania = x.czas_trwania;
+    rezyser = x.rezyser;
+    gatunek=x.gatunek;
+
+    return *this;
 }

@@ -10,9 +10,9 @@ void Ksiazka::wyswietl() {
     std::cout << "Rok wydania:\t\t" << this->rok_wydania << std::endl;
     std::cout << std::endl;
     std::cout << "Stron:\t\t\t" << this->strony << std::endl;
-    std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << std::endl;
+    std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << "+" << std::endl;
     std::cout << std::endl;
-    std::cout << "Ocena:\t\t\t" << this->ocena << std::endl;
+    std::cout << "Ocena:\t\t\t" << this->ocena << " / 5" << std::endl;
     std::cout << "Ulubione:\t\t";
     if (this->ulubione == true) std::cout << "Tak";
     else std::cout << "Nie";
@@ -21,6 +21,10 @@ void Ksiazka::wyswietl() {
 
 unsigned int Ksiazka::zwrocLiczbeKsiazek() {
     return liczbaKsiazek;
+}
+
+Ksiazka::Ksiazka() {
+    liczbaKsiazek++;
 }
 
 Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
@@ -39,11 +43,22 @@ Ksiazka::Ksiazka(const Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min
     this->gatunek = x.gatunek;
 }
 
-inline Ksiazka::~Ksiazka() {
+Ksiazka::~Ksiazka() {
     liczbaKsiazek--;
 }
 
 Ksiazka& Ksiazka::operator=(const Ksiazka& x) {
-    Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek);
-    return n;
+    if (&x == this)return *this;
+
+    tytul = x.tytul;
+    rok_wydania = x.rok_wydania;
+    ocena = x.ocena;
+    min_wiek = x.min_wiek;
+    ulubione = x.ulubione;
+    strony = x.strony;
+    autor = x.autor;
+    wydawnictwo = x.wydawnictwo;
+    gatunek = x.gatunek;
+
+    return *this;
 }
