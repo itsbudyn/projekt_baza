@@ -1,5 +1,15 @@
 ﻿#include "Ksiazka.h"
 
+// w każdym konstruktorze musi być liczbaKsiazek++
+// aby składnik statyczny liczbaKsiazek była równa
+// rzeczywistej liczbie aktualnie stworzonych
+// książek. destruktor ma liczbaKsiazek--, aby
+// przy każdym zniszczeniu obiektu typu książka
+// składnik statyczny miał wartość rzeczywistej
+// liczbie stworzonych książek. 
+
+// sposób analogiczny dla klas film i album_muzyczny
+
 unsigned int Ksiazka::liczbaKsiazek = 0;
 
 void Ksiazka::wyswietl() {
@@ -19,14 +29,17 @@ void Ksiazka::wyswietl() {
     std::cout << std::endl;
 }
 
+// metoda zwracająca wartość składnika statycznego
 unsigned int Ksiazka::zwrocLiczbeKsiazek() {
     return liczbaKsiazek;
 }
 
+// konstruktor domyślny
 Ksiazka::Ksiazka() {
     liczbaKsiazek++;
 }
 
+// konstruktor uzupełniający wszystkie zmienne
 Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_strony, std::string u_autor, std::string u_wydawnictwo, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
     liczbaKsiazek++;
     this->strony = u_strony;
@@ -35,6 +48,7 @@ Ksiazka::Ksiazka(std::string u_tytul, unsigned short u_rok_wydania, double u_oce
     this->gatunek = u_gatunek;
 }
 
+// konstruktor kopiujący
 Ksiazka::Ksiazka(const Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
     liczbaKsiazek++;
     this->strony = x.strony;
@@ -43,13 +57,16 @@ Ksiazka::Ksiazka(const Ksiazka& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min
     this->gatunek = x.gatunek;
 }
 
+// destruktor
 Ksiazka::~Ksiazka() {
     liczbaKsiazek--;
 }
 
+// przeciążony operator przypisywania
 Ksiazka& Ksiazka::operator=(const Ksiazka& x) {
-    if (&x == this)return *this;
+    if (&x == this)return *this; // w przypadku gdy operator wskazuje na samego siebie
 
+    // jeżeli nie - część kopiująca
     tytul = x.tytul;
     rok_wydania = x.rok_wydania;
     ocena = x.ocena;

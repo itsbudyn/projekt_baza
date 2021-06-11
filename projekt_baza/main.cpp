@@ -7,6 +7,7 @@
 
 int main()
 {
+    //przygotowanie programu
     SetConsoleOutputCP(65001);
 
     Utwor* wsk;
@@ -14,6 +15,7 @@ int main()
     std::vector<Film> filmy;
     std::vector<Album_muzyczny> muzyka;
 
+    //menu główne
     while (true) {
         system("cls");
         unsigned short choice;
@@ -43,7 +45,7 @@ int main()
         system("cls");
 
         switch (choice) {
-            case 1: {
+            case 1: { // dodawanie do bazy
                 unsigned short choice1;
                 std::cout << "Dodawanie przedmiotów." << std::endl;
                 std::cout << "1. Dodaj książkę." << std::endl;
@@ -72,7 +74,7 @@ int main()
                 }
                 break;
             }
-            case 2: {
+            case 2: { // przeglądanie bazy
                 unsigned short choice1;
                 unsigned short choice2;
                 std::cout << "Przeglądanie przedmiotów." << std::endl;
@@ -93,7 +95,7 @@ int main()
                 std::cin.ignore(256, '\n');
                 system("cls");
                 switch (choice1) {
-                    case 1: {
+                    case 1: { // przeglądanie książek
                         for (unsigned int i = 0; i < ksiazki.size(); i++) {
                             if (choice2 == 1) {
                                 if (!ksiazki.at(i).czyUlubione())continue;
@@ -106,7 +108,7 @@ int main()
                         system("pause");
                         break;
                     }
-                    case 2: {
+                    case 2: { // przeglądanie filmów
                         for (unsigned int i = 0; i < filmy.size(); i++) {
                             if (choice2 == 1) {
                                 if (!filmy.at(i).czyUlubione())continue;
@@ -119,7 +121,7 @@ int main()
                         system("pause");
                         break;
                     }
-                    case 3: {
+                    case 3: { // przeglądanie albumów muzycznych
                         for (unsigned int i = 0; i < muzyka.size(); i++) {
                             if (choice2 == 1) {
                                 if (!muzyka.at(i).czyUlubione())continue;
@@ -135,7 +137,7 @@ int main()
                 }
                 break;
             }
-            case 3: {
+            case 3: { // wyszukiwanie
                 unsigned short choice1;
                 std::cout << "Wyszukiwanie: " << std::endl;
                 std::cout << std::endl;
@@ -164,7 +166,7 @@ int main()
                 }
                 break;
             }
-            case 4: {
+            case 4: { // edycja / usuwanie
                 unsigned short choice1;
                 std::cout << "Edytować/Usunąć skąd?" << std::endl;
                 std::cout << std::endl;
@@ -194,7 +196,7 @@ int main()
                 }
                 break;
             }
-            case 5: {
+            case 5: { // zapisywanie bazy
                 std::string name;
                 std::cout << "Podaj nazwę, pod którą chcesz zapisać bazę." << std::endl;
                 std::cout << "Bazy zostaną zapisane jako 3 pliki .csv" << std::endl;
@@ -212,7 +214,7 @@ int main()
                 system("pause");
                 break;
             }
-            case 6: {
+            case 6: { // wczytywanie bazy
                 std::string name;
                 std::cout << "Podaj nazwę bazy, którą chcesz wczytać." << std::endl;
                 std::cout << "Należy podać nazwę bazy przed znakiem _." << std::endl;
@@ -231,7 +233,7 @@ int main()
                 system("pause");
                 break;
             }
-            case 9: {
+            case 9: { // czyszczenie bazy w pamięci ram
                 unsigned char wybor;
                 std::cout << "CZY NA PEWNO WYCZYŚĆ BAZĘ DANYCH W PAMIĘCI PODRĘCZNEJ?" << std::endl;
                 std::cout << "Niezapisane zmiany zostaną utracone!" << std::endl;
@@ -250,6 +252,6 @@ int main()
                 break;
             }
         }
-        if (choice == 0) break;
+        if (choice == 0) break; // wyjście
     }
 }

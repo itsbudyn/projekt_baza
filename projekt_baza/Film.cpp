@@ -18,14 +18,17 @@ void Film::wyswietl() {
     std::cout << std::endl;
 }
 
+// metoda zwracająca wartość składnika statycznego
 unsigned int Film::zwrocLiczbeFilmow() {
     return liczbaFilmow;
 }
 
+// konstruktor domyślny
 Film::Film() {
     liczbaFilmow++;
 }
 
+// konstruktor uzupełniający wszystkie zmienne
 Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, std::string u_rezyser, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
     liczbaFilmow++;
     this->czas_trwania = u_czas_trwania;
@@ -33,6 +36,7 @@ Film::Film(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, un
     this->gatunek = u_gatunek;
 }
 
+// konstruktor kopiujący
 Film::Film(const Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
     liczbaFilmow++;
     this->czas_trwania = x.czas_trwania;
@@ -40,10 +44,12 @@ Film::Film(const Film& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.
     this->gatunek = x.gatunek;
 }
 
+// destruktor
 Film::~Film() {
     liczbaFilmow--;
 }
 
+// przeciążony operator przypisywania
 Film& Film::operator=(const Film& x) {
     if (&x == this)return *this;
 

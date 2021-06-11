@@ -19,14 +19,17 @@ void Album_muzyczny::wyswietl() {
     std::cout << std::endl;
 }
 
+// metoda zwracająca wartość składnika statycznego
 unsigned int Album_muzyczny::zwrocLiczbeAlbumow() {
     return liczbaAlbumow;
 }
 
+// konstruktor domyślny
 Album_muzyczny::Album_muzyczny() {
     liczbaAlbumow++;
 }
 
+// konstruktor uzupełniający wszystkie zmienne
 Album_muzyczny::Album_muzyczny(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione, unsigned short u_czas_trwania, unsigned short u_utworow, std::string u_autor, std::string u_gatunek) :Utwor(u_tytul, u_rok_wydania, u_ocena, u_min_wiek, u_ulubione) {
     this->czas_trwania = u_czas_trwania;
     this->utworow = u_utworow;
@@ -34,6 +37,7 @@ Album_muzyczny::Album_muzyczny(std::string u_tytul, unsigned short u_rok_wydania
     this->gatunek = u_gatunek;
 }
 
+// konstruktor kopiujący
 Album_muzyczny::Album_muzyczny(const Album_muzyczny& x) :Utwor(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione) {
     this->czas_trwania = x.czas_trwania;
     this->utworow = x.utworow;
@@ -41,10 +45,12 @@ Album_muzyczny::Album_muzyczny(const Album_muzyczny& x) :Utwor(x.tytul, x.rok_wy
     this->gatunek = x.gatunek;
 }
 
+// destruktor
 Album_muzyczny::~Album_muzyczny() {
     liczbaAlbumow--;
 }
 
+// przeciążony operator przypisywania
 Album_muzyczny& Album_muzyczny::operator=(const Album_muzyczny& x) {
     if (&x == this)return *this;
 
