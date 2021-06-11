@@ -1,4 +1,4 @@
-#include "Utwor.h"
+﻿#include "Utwor.h"
 
 unsigned int Utwor::liczbaUtworow = 0;
 

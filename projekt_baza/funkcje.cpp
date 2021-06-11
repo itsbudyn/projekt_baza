@@ -1,4 +1,4 @@
-#include "funkcje.h"
+ï»¿#include "funkcje.h"
 
 void dodaj_ksiazke(std::vector<Ksiazka>& k) {
     std::string tytul;
@@ -11,23 +11,23 @@ void dodaj_ksiazke(std::vector<Ksiazka>& k) {
     std::string wydawnictwo;
     std::string gatunek;
 
-    std::cout << "Podaj tytu³ ksi¹¿ki: ";
+    std::cout << "Podaj tytuÅ‚ ksiÄ…Å¼ki: ";
     std::getline(std::cin, tytul);
 
-    std::cout << "Podaj autora ksi¹¿ki: ";
+    std::cout << "Podaj autora ksiÄ…Å¼ki: ";
     std::getline(std::cin, autor);
 
-    std::cout << "Podaj wydawnictwo ksi¹¿ki: ";
+    std::cout << "Podaj wydawnictwo ksiÄ…Å¼ki: ";
     std::getline(std::cin, wydawnictwo);
 
-    std::cout << "Podaj rok wydania ksi¹¿ki: ";
+    std::cout << "Podaj rok wydania ksiÄ…Å¼ki: ";
     std::cin >> rok_wydania;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Podaj gatunek ksi¹¿ki: ";
+    std::cout << "Podaj gatunek ksiÄ…Å¼ki: ";
     std::getline(std::cin, gatunek);
 
-    std::cout << "Podaj iloœæ stron: ";
+    std::cout << "Podaj iloÅ›Ä‡ stron: ";
     std::cin >> strony;
     std::cin.ignore(256, '\n');
 
@@ -39,7 +39,7 @@ void dodaj_ksiazke(std::vector<Ksiazka>& k) {
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyæ jako ulubione? [t/N]";
+    std::cout << "OznaczyÄ‡ jako ulubione? [t/N]";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -62,10 +62,10 @@ void dodaj_film(std::vector<Film>& f) {
     std::string rezyser;
     std::string gatunek;
 
-    std::cout << "Podaj tytu³ filmu: ";
+    std::cout << "Podaj tytuÅ‚ filmu: ";
     std::getline(std::cin, tytul);
 
-    std::cout << "Podaj re¿ysera filmu: ";
+    std::cout << "Podaj reÅ¼ysera filmu: ";
     std::getline(std::cin, rezyser);
 
     std::cout << "Podaj rok wydania filmu: ";
@@ -87,7 +87,7 @@ void dodaj_film(std::vector<Film>& f) {
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyæ jako ulubione? [t/N]";
+    std::cout << "OznaczyÄ‡ jako ulubione? [t/N]";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -111,10 +111,10 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     std::string autor; 
     std::string gatunek; 
 
-    std::cout << "Podaj tytu³ albumu: ";
+    std::cout << "Podaj tytuÅ‚ albumu: ";
     std::getline(std::cin, tytul);
 
-    std::cout << "Podaj autorów albumu: ";
+    std::cout << "Podaj autorÃ³w albumu: ";
     std::getline(std::cin, autor);
 
     std::cout << "Podaj rok wydania albumu: ";
@@ -128,7 +128,7 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     std::cin >> czas_trwania;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Podaj iloœæ utworów w albumie: ";
+    std::cout << "Podaj iloÅ›Ä‡ utworÃ³w w albumie: ";
     std::cin >> utworow;
     std::cin.ignore(256, '\n');
 
@@ -140,7 +140,7 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyæ jako ulubione? [t/N]";
+    std::cout << "OznaczyÄ‡ jako ulubione? [t/N]";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -158,27 +158,27 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
     unsigned short int choice;
     for (unsigned int i = 0; i < ksiazki.size(); i++) {
         std::cout << std::endl;
-        std::cout << "Ksi¹¿ka nr. " << i + 1 << std::endl;
+        std::cout << "KsiÄ…Å¼ka nr. " << i + 1 << std::endl;
         wsk = &ksiazki.at(i);
         wsk->wyswietl();
     }
     std::cout << std::endl;
-    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaæ): ";
+    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaÄ‡): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
     if (choice != 0 && choice<=ksiazki.size()) {
         wsk = &ksiazki.at(choice - 1);
         wsk->wyswietl();
         std::cout << std::endl;
-        std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
+        std::cout << "Co zrobiÄ‡ z powyÅ¼szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
-        std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
-        std::cout << "4. Usuñ przedmiot" << std::endl;
+        std::cout << "2. UtwÃ³rz kopiÄ™ przedmiotu " << std::endl;
+        std::cout << "3. UtwÃ³rz kopiÄ™ przedmiotu (operator =)" << std::endl;
+        std::cout << "4. UsuÅ„ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short int choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
@@ -186,25 +186,25 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
             case 1: {
                 unsigned short int field;
                 std::cout << "Wybierz pole do zmiany: " << std::endl;
-                std::cout << "1. Zmieñ tytu³: " << std::endl;
-                std::cout << "2. Zmieñ rok wydania: " << std::endl;
-                std::cout << "3. Zmieñ ocenê: " << std::endl;
-                std::cout << "4. Zmieñ ograniczenie wiekowe: " << std::endl;
-                std::cout << "5. Dodaj/Usuñ z ulubionych: " << std::endl;
-                std::cout << "6. Zmieñ iloœæ stron: " << std::endl;
-                std::cout << "7. Zmieñ autora: " << std::endl;
-                std::cout << "8. Zmieñ wydawnictwo: " << std::endl;
-                std::cout << "9. Zmieñ gatunek: " << std::endl;
+                std::cout << "1. ZmieÅ„ tytuÅ‚: " << std::endl;
+                std::cout << "2. ZmieÅ„ rok wydania: " << std::endl;
+                std::cout << "3. ZmieÅ„ ocenÄ™: " << std::endl;
+                std::cout << "4. ZmieÅ„ ograniczenie wiekowe: " << std::endl;
+                std::cout << "5. Dodaj/UsuÅ„ z ulubionych: " << std::endl;
+                std::cout << "6. ZmieÅ„ iloÅ›Ä‡ stron: " << std::endl;
+                std::cout << "7. ZmieÅ„ autora: " << std::endl;
+                std::cout << "8. ZmieÅ„ wydawnictwo: " << std::endl;
+                std::cout << "9. ZmieÅ„ gatunek: " << std::endl;
                 std::cout << std::endl;
                 std::cout << "Inne - Anuluj: " << std::endl;
                 std::cout << std::endl;
-                std::cout << "Wybór: ";
+                std::cout << "WybÃ³r: ";
                 std::cin >> field;
                 std::cin.ignore(256, '\n');
                 switch (field) {
                     case 1: {
                         std::string tytul;
-                        std::cout << "Podaj nowy tytu³: ";
+                        std::cout << "Podaj nowy tytuÅ‚: ";
                         std::getline(std::cin, tytul);
                         ksiazki.at(choice - 1).tytul = tytul;
                         std::cout << "Zmieniono!" << std::endl;
@@ -223,7 +223,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     }
                     case 3: {
                         double ocena;
-                        std::cout << "Podaj now¹ ocenê (0 aby usun¹æ ocenê): ";
+                        std::cout << "Podaj nowÄ… ocenÄ™ (0 aby usunÄ…Ä‡ ocenÄ™): ";
                         std::cin >> ocena;
                         std::cin.ignore(256, '\n');
                         if (ocena > 5) ocena = 5;
@@ -246,7 +246,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     case 5: {
                         bool ulubione;
                         char taknie='n';
-                        std::cout << "Czy przedmiot ma byæ w ulubionych? [t/N]: ";
+                        std::cout << "Czy przedmiot ma byÄ‡ w ulubionych? [t/N]: ";
                         std::cin >> taknie;
                         std::cin.ignore(256, '\n');
                         if (tolower(taknie) == 't') ulubione = true;
@@ -258,7 +258,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     }
                     case 6: {
                         unsigned short strony;
-                        std::cout << "Ile stron ma ksi¹¿ka?: ";
+                        std::cout << "Ile stron ma ksiÄ…Å¼ka?: ";
                         std::cin >> strony;
                         std::cin.ignore(256, '\n');
                         ksiazki.at(choice - 1).strony = strony;
@@ -268,7 +268,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     }
                     case 7: {
                         std::string autor;
-                        std::cout << "Podaj nowego autora/autorów ksi¹¿ki: ";
+                        std::cout << "Podaj nowego autora/autorÃ³w ksiÄ…Å¼ki: ";
                         std::getline(std::cin, autor);
                         ksiazki.at(choice - 1).autor = autor;
                         std::cout << "Zmieniono!" << std::endl;
@@ -277,7 +277,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     }
                     case 8: {
                         std::string wydawnictwo;
-                        std::cout << "Podaj nowe wydawnictwo ksi¹¿ki: ";
+                        std::cout << "Podaj nowe wydawnictwo ksiÄ…Å¼ki: ";
                         std::getline(std::cin, wydawnictwo);
                         ksiazki.at(choice - 1).wydawnictwo = wydawnictwo;
                         std::cout << "Zmieniono!" << std::endl;
@@ -286,7 +286,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     }
                     case 9: {
                         std::string gatunek;
-                        std::cout << "Podaj nowy gatunek ksi¹¿ki: ";
+                        std::cout << "Podaj nowy gatunek ksiÄ…Å¼ki: ";
                         std::getline(std::cin, gatunek);
                         ksiazki.at(choice - 1).gatunek = gatunek;
                         std::cout << "Zmieniono!" << std::endl;
@@ -297,8 +297,8 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                 break;
             }
             case 2: {
-                std::cout << "Powy¿szy wpis zostanie skopiowany. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-                std::cout << "Wybór: ";
+                std::cout << "PowyÅ¼szy wpis zostanie skopiowany. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+                std::cout << "WybÃ³r: ";
                 unsigned short wybor;
                 std::cin >> wybor;
                 std::cin.ignore(256, '\n');
@@ -307,13 +307,13 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     ksiazki.push_back(nowa);
                     std::cout << "Skopiowano!" << std::endl; 
                 }
-                else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+                else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
                 system("pause");
                 break;
             }
             case 3: {
-                std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-                std::cout << "Wybór: ";
+                std::cout << "PowyÅ¼szy wpis zostanie skopiowany (operator =). Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+                std::cout << "WybÃ³r: ";
                 unsigned short wybor;
                 std::cin >> wybor;
                 std::cin.ignore(256, '\n');
@@ -323,22 +323,22 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
                     ksiazki.push_back(nowa);
                     std::cout << "Skopiowano!" << std::endl;
                 }
-                else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+                else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
                 system("pause");
                 break;
             }
             case 4: {
-                std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-                std::cout << "Wybór: ";
+                std::cout << "PowyÅ¼szy wpis zostanie usuniÄ™ty. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+                std::cout << "WybÃ³r: ";
                 unsigned short wybor;
                 std::cin >> wybor;
                 std::cin.ignore(256, '\n');
                 if (wybor == 1) {
                     wsk = nullptr;
                     ksiazki.erase(ksiazki.begin() + (choice - 1));
-                    std::cout << "Usuniêto!" << std::endl;
+                    std::cout << "UsuniÄ™to!" << std::endl;
                 }
-                else std::cout << "Nic nie zosta³o usuniête." << std::endl;
+                else std::cout << "Nic nie zostaÅ‚o usuniÄ™te." << std::endl;
                 system("pause");
                 break;
             }
@@ -346,7 +346,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
     }
     else {
     system("cls");
-    std::cout << "Anulowano edycjê." << std::endl;
+    std::cout << "Anulowano edycjÄ™." << std::endl;
     system("pause");
 }
 }
@@ -361,22 +361,22 @@ void edytujFilmy(std::vector<Film>& filmy) {
         wsk->wyswietl();
     }
     std::cout << std::endl;
-    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaæ): ";
+    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaÄ‡): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
     if (choice != 0 && choice <= filmy.size()) {
         wsk = &filmy.at(choice - 1);
         wsk->wyswietl();
         std::cout << std::endl;
-        std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
+        std::cout << "Co zrobiÄ‡ z powyÅ¼szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
-        std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
-        std::cout << "4. Usuñ przedmiot" << std::endl;
+        std::cout << "2. UtwÃ³rz kopiÄ™ przedmiotu " << std::endl;
+        std::cout << "3. UtwÃ³rz kopiÄ™ przedmiotu (operator =)" << std::endl;
+        std::cout << "4. UsuÅ„ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short int choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
@@ -384,24 +384,24 @@ void edytujFilmy(std::vector<Film>& filmy) {
         case 1: {
             unsigned short int field;
             std::cout << "Wybierz pole do zmiany: " << std::endl;
-            std::cout << "1. Zmieñ tytu³: " << std::endl;
-            std::cout << "2. Zmieñ rok wydania: " << std::endl;
-            std::cout << "3. Zmieñ ocenê: " << std::endl;
-            std::cout << "4. Zmieñ ograniczenie wiekowe: " << std::endl;
-            std::cout << "5. Dodaj/Usuñ z ulubionych: " << std::endl;
-            std::cout << "6. Zmieñ czas trwania: " << std::endl;
-            std::cout << "7. Zmieñ re¿ysera: " << std::endl;
-            std::cout << "8. Zmieñ gatunek: " << std::endl;
+            std::cout << "1. ZmieÅ„ tytuÅ‚: " << std::endl;
+            std::cout << "2. ZmieÅ„ rok wydania: " << std::endl;
+            std::cout << "3. ZmieÅ„ ocenÄ™: " << std::endl;
+            std::cout << "4. ZmieÅ„ ograniczenie wiekowe: " << std::endl;
+            std::cout << "5. Dodaj/UsuÅ„ z ulubionych: " << std::endl;
+            std::cout << "6. ZmieÅ„ czas trwania: " << std::endl;
+            std::cout << "7. ZmieÅ„ reÅ¼ysera: " << std::endl;
+            std::cout << "8. ZmieÅ„ gatunek: " << std::endl;
             std::cout << std::endl;
             std::cout << "Inne - Anuluj: " << std::endl;
             std::cout << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "WybÃ³r: ";
             std::cin >> field;
             std::cin.ignore(256, '\n');
             switch (field) {
             case 1: {
                 std::string tytul;
-                std::cout << "Podaj nowy tytu³: ";
+                std::cout << "Podaj nowy tytuÅ‚: ";
                 std::getline(std::cin, tytul);
                 filmy.at(choice - 1).tytul = tytul;
                 std::cout << "Zmieniono!" << std::endl;
@@ -420,7 +420,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
             }
             case 3: {
                 double ocena;
-                std::cout << "Podaj now¹ ocenê (0 aby usun¹æ ocenê): ";
+                std::cout << "Podaj nowÄ… ocenÄ™ (0 aby usunÄ…Ä‡ ocenÄ™): ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 if (ocena > 5) ocena = 5;
@@ -443,7 +443,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
             case 5: {
                 bool ulubione;
                 char taknie='n';
-                std::cout << "Czy przedmiot ma byæ w ulubionych? [t/N]: ";
+                std::cout << "Czy przedmiot ma byÄ‡ w ulubionych? [t/N]: ";
                 std::cin >> taknie;
                 std::cin.ignore(256, '\n');
                 if (tolower(taknie) == 't') ulubione = true;
@@ -465,7 +465,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
             }
             case 7: {
                 std::string rezyser;
-                std::cout << "Podaj nowego re¿ysera filmu: ";
+                std::cout << "Podaj nowego reÅ¼ysera filmu: ";
                 std::getline(std::cin, rezyser);
                 filmy.at(choice - 1).rezyser = rezyser;
                 std::cout << "Zmieniono!" << std::endl;
@@ -485,8 +485,8 @@ void edytujFilmy(std::vector<Film>& filmy) {
             break;
         }
         case 2: {
-            std::cout << "Powy¿szy wpis zostanie skopiowany. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie skopiowany. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
@@ -495,13 +495,13 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 filmy.push_back(nowy);
                 std::cout << "Skopiowano!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
             system("pause");
             break;
         }
         case 3: {
-            std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie skopiowany (operator =). Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
@@ -511,22 +511,22 @@ void edytujFilmy(std::vector<Film>& filmy) {
                 filmy.push_back(nowy);
                 std::cout << "Skopiowano!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
             system("pause");
             break;
         }
         case 4: {
-            std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie usuniÄ™ty. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
             if (wybor == 1) {
                 wsk = nullptr;
                 filmy.erase(filmy.begin() + (choice - 1));
-                std::cout << "Usuniêto!" << std::endl;
+                std::cout << "UsuniÄ™to!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o usuniête." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o usuniÄ™te." << std::endl;
             system("pause");
             break;
         }
@@ -534,7 +534,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
     }
     else {
     system("cls");
-    std::cout << "Anulowano edycjê." << std::endl;
+    std::cout << "Anulowano edycjÄ™." << std::endl;
     system("pause");
 }
 }
@@ -549,22 +549,22 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
         wsk->wyswietl();
     }
     std::cout << std::endl;
-    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaæ): ";
+    std::cout << "Wybierz przedmiot do edycji (0 aby anulowaÄ‡): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
     if (choice != 0 && choice <= muzyka.size()) {
         wsk = &muzyka.at(choice - 1);
         wsk->wyswietl();
         std::cout << std::endl;
-        std::cout << "Co zrobiæ z powy¿szym przedmiotem?" << std::endl;
+        std::cout << "Co zrobiÄ‡ z powyÅ¼szym przedmiotem?" << std::endl;
         std::cout << "1. Edytuj pole" << std::endl;
-        std::cout << "2. Utwórz kopiê przedmiotu " << std::endl;
-        std::cout << "3. Utwórz kopiê przedmiotu (operator =)" << std::endl;
-        std::cout << "4. Usuñ przedmiot" << std::endl;
+        std::cout << "2. UtwÃ³rz kopiÄ™ przedmiotu " << std::endl;
+        std::cout << "3. UtwÃ³rz kopiÄ™ przedmiotu (operator =)" << std::endl;
+        std::cout << "4. UsuÅ„ przedmiot" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Nic" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short int choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
@@ -572,25 +572,25 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
         case 1: {
             unsigned short int field;
             std::cout << "Wybierz pole do zmiany: " << std::endl;
-            std::cout << "1. Zmieñ tytu³: " << std::endl;
-            std::cout << "2. Zmieñ rok wydania: " << std::endl;
-            std::cout << "3. Zmieñ ocenê: " << std::endl;
-            std::cout << "4. Zmieñ ograniczenie wiekowe: " << std::endl;
-            std::cout << "5. Dodaj/Usuñ z ulubionych: " << std::endl;
-            std::cout << "6. Zmieñ czas trwania: " << std::endl;
-            std::cout << "7. Zmieñ iloœc utworów: " << std::endl;
-            std::cout << "8. Zmieñ autora/autorów: " << std::endl;
-            std::cout << "9. Zmieñ gatunek: " << std::endl;
+            std::cout << "1. ZmieÅ„ tytuÅ‚: " << std::endl;
+            std::cout << "2. ZmieÅ„ rok wydania: " << std::endl;
+            std::cout << "3. ZmieÅ„ ocenÄ™: " << std::endl;
+            std::cout << "4. ZmieÅ„ ograniczenie wiekowe: " << std::endl;
+            std::cout << "5. Dodaj/UsuÅ„ z ulubionych: " << std::endl;
+            std::cout << "6. ZmieÅ„ czas trwania: " << std::endl;
+            std::cout << "7. ZmieÅ„ iloÅ›c utworÃ³w: " << std::endl;
+            std::cout << "8. ZmieÅ„ autora/autorÃ³w: " << std::endl;
+            std::cout << "9. ZmieÅ„ gatunek: " << std::endl;
             std::cout << std::endl;
             std::cout << "Inne - Anuluj: " << std::endl;
             std::cout << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "WybÃ³r: ";
             std::cin >> field;
             std::cin.ignore(256, '\n');
             switch (field) {
             case 1: {
                 std::string tytul;
-                std::cout << "Podaj nowy tytu³: ";
+                std::cout << "Podaj nowy tytuÅ‚: ";
                 std::getline(std::cin, tytul);
                 muzyka.at(choice - 1).tytul = tytul;
                 std::cout << "Zmieniono!" << std::endl;
@@ -609,7 +609,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             }
             case 3: {
                 double ocena;
-                std::cout << "Podaj now¹ ocenê (0 aby usun¹æ ocenê): ";
+                std::cout << "Podaj nowÄ… ocenÄ™ (0 aby usunÄ…Ä‡ ocenÄ™): ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 if (ocena > 5) ocena = 5;
@@ -632,7 +632,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             case 5: {
                 bool ulubione;
                 char taknie = 'n';
-                std::cout << "Czy przedmiot ma byæ w ulubionych? [t/N]: ";
+                std::cout << "Czy przedmiot ma byÄ‡ w ulubionych? [t/N]: ";
                 std::cin >> taknie;
                 std::cin.ignore(256, '\n');
                 if (tolower(taknie) == 't') ulubione = true;
@@ -654,7 +654,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             }
             case 7: {
                 unsigned short utworow;
-                std::cout << "Podaj now¹ iloœæ utworów: ";
+                std::cout << "Podaj nowÄ… iloÅ›Ä‡ utworÃ³w: ";
                 std::cin >> utworow;
                 std::cin.ignore(256, '\n');
                 muzyka.at(choice - 1).utworow = utworow;
@@ -664,7 +664,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             }
             case 8: {
                 std::string autor;
-                std::cout << "Podaj nowego autora/autorów albumu: ";
+                std::cout << "Podaj nowego autora/autorÃ³w albumu: ";
                 std::getline(std::cin, autor);
                 muzyka.at(choice - 1).autor = autor;
                 std::cout << "Zmieniono!" << std::endl;
@@ -684,8 +684,8 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 2: {
-            std::cout << "Powy¿szy wpis zostanie skopiowany. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie skopiowany. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
@@ -694,13 +694,13 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 muzyka.push_back(nowy);
                 std::cout << "Skopiowano!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
             system("pause");
             break;
         }
         case 3: {
-            std::cout << "Powy¿szy wpis zostanie skopiowany (operator =). Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie skopiowany (operator =). Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
@@ -710,22 +710,22 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
                 muzyka.push_back(nowy);
                 std::cout << "Skopiowano!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o skopiowane." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o skopiowane." << std::endl;
             system("pause");
             break;
         }
         case 4: {
-            std::cout << "Powy¿szy wpis zostanie usuniêty. Czy kontynuowaæ? (1 - Tak, Reszta - Nie)" << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "PowyÅ¼szy wpis zostanie usuniÄ™ty. Czy kontynuowaÄ‡? (1 - Tak, Reszta - Nie)" << std::endl;
+            std::cout << "WybÃ³r: ";
             unsigned short wybor;
             std::cin >> wybor;
             std::cin.ignore(256, '\n');
             if (wybor == 1) {
                 wsk = nullptr;
                 muzyka.erase(muzyka.begin() + (choice - 1));
-                std::cout << "Usuniêto!" << std::endl;
+                std::cout << "UsuniÄ™to!" << std::endl;
             }
-            else std::cout << "Nic nie zosta³o usuniête." << std::endl;
+            else std::cout << "Nic nie zostaÅ‚o usuniÄ™te." << std::endl;
             system("pause");
             break;
         }
@@ -733,7 +733,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
     }
     else {
     system("cls");
-    std::cout << "Anulowano edycjê." << std::endl;
+    std::cout << "Anulowano edycjÄ™." << std::endl;
     system("pause");
 }
 }
@@ -742,20 +742,20 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
     Utwor* wsk;
     unsigned short results = 0;
     unsigned short ksiazek = 0;
-    std::cout << "Opcje wyszukiwania ksi¹¿ki: " << std::endl;
+    std::cout << "Opcje wyszukiwania ksiÄ…Å¼ki: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
     std::cout << "2. Szukaj po autorze." << std::endl;
     std::cout << "3. Szukaj po wydawnictwie." << std::endl;
     std::cout << "4. Szukaj po gatunku." << std::endl;
     std::cout << "5. Szukaj po roku wydania." << std::endl;
-    std::cout << "6. Szukaj po iloœci stron." << std::endl;
+    std::cout << "6. Szukaj po iloÅ›ci stron." << std::endl;
     std::cout << "7. Szukaj po ograniczeniu wiekowym." << std::endl;
     std::cout << "8. Szukaj po ocenie." << std::endl;
     std::cout << std::endl;
     std::cout << "0. Anuluj wyszukiwanie." << std::endl;
     std::cout << std::endl;
-    std::cout << "Wybór: ";
+    std::cout << "WybÃ³r: ";
     unsigned short choice;
     std::cin >> choice;
     std::cin.ignore(256, '\n');
@@ -763,7 +763,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
     switch (choice) {
         case 1: {
             std::string tytul;
-            std::cout << "Podaj tytu³ ksi¹¿ki do znalezienia: ";
+            std::cout << "Podaj tytuÅ‚ ksiÄ…Å¼ki do znalezienia: ";
             std::getline(std::cin, tytul);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -779,7 +779,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         }
         case 2: {
             std::string autor;
-            std::cout << "Podaj autora, którego ksi¹¿ki chcesz wyszukaæ: ";
+            std::cout << "Podaj autora, ktÃ³rego ksiÄ…Å¼ki chcesz wyszukaÄ‡: ";
             std::getline(std::cin, autor);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -795,7 +795,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         }
         case 3: {
             std::string wydawnictwo;
-            std::cout << "Podaj wydawnictwo, od którego ksi¹¿ki chcesz wyszukaæ: ";
+            std::cout << "Podaj wydawnictwo, od ktÃ³rego ksiÄ…Å¼ki chcesz wyszukaÄ‡: ";
             std::getline(std::cin, wydawnictwo);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -811,7 +811,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         }
         case 4: {
             std::string gatunek;
-            std::cout << "Podaj gatunek ksi¹¿ek, których chcesz wyszukaæ: ";
+            std::cout << "Podaj gatunek ksiÄ…Å¼ek, ktÃ³rych chcesz wyszukaÄ‡: ";
             std::getline(std::cin, gatunek);
             std::cout << "Wyniki wyszukiwania: " << std::endl;
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -826,16 +826,16 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             break;
         }
         case 5: {
-            std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
+            std::cout << "W jaki sposÃ³b wyszukaÄ‡ po roku wydania?" << std::endl;
             std::cout << std::endl;
-            std::cout << "1. Wyszukaj ksi¹¿ki wydane w podanym roku" << std::endl;
-            std::cout << "2. Wyszukaj ksi¹¿ki wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
-            std::cout << "3. Wyszukaj ksi¹¿ki wydane w podanym roku b¹dŸ póŸniej" << std::endl;
-            std::cout << "4. Wyszukaj ksi¹¿ki wydane w podanym przedziale lat" << std::endl;
+            std::cout << "1. Wyszukaj ksiÄ…Å¼ki wydane w podanym roku" << std::endl;
+            std::cout << "2. Wyszukaj ksiÄ…Å¼ki wydane w podanym roku bÄ…dÅº wczeÅ›niej" << std::endl;
+            std::cout << "3. Wyszukaj ksiÄ…Å¼ki wydane w podanym roku bÄ…dÅº pÃ³Åºniej" << std::endl;
+            std::cout << "4. Wyszukaj ksiÄ…Å¼ki wydane w podanym przedziale lat" << std::endl;
             std::cout << std::endl;
             std::cout << "0. Anuluj" << std::endl;
             std::cout << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "WybÃ³r: ";
             unsigned short choice1;
             std::cin >> choice1;
             std::cin.ignore(256, '\n');
@@ -894,10 +894,10 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                 }
                 case 4: {
                     unsigned short rok_wydania1, rok_wydania2;
-                    std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+                    std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
                     std::cin >> rok_wydania1;
                     std::cin.ignore(256, '\n');
-                    std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+                    std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
                     std::cin >> rok_wydania2;
                     std::cin.ignore(256, '\n');
                     for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -915,16 +915,16 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             break;
         }
         case 6: {
-            std::cout << "W jaki sposób wyszukaæ po iloœci stron?" << std::endl;
+            std::cout << "W jaki sposÃ³b wyszukaÄ‡ po iloÅ›ci stron?" << std::endl;
             std::cout << std::endl;
-            std::cout << "1. Wyszukaj ksi¹¿ki maj¹ce tyle stron" << std::endl;
-            std::cout << "2. Wyszukaj ksi¹¿ki maj¹ce tyle b¹dŸ mniej stron" << std::endl;
-            std::cout << "3. Wyszukaj ksi¹¿ki maj¹ce tyle b¹dŸ wiêcej stron" << std::endl;
-            std::cout << "4. Wyszukaj ksi¹¿ki maj¹ce iloœæ stron w podanym przedziale" << std::endl;
+            std::cout << "1. Wyszukaj ksiÄ…Å¼ki majÄ…ce tyle stron" << std::endl;
+            std::cout << "2. Wyszukaj ksiÄ…Å¼ki majÄ…ce tyle bÄ…dÅº mniej stron" << std::endl;
+            std::cout << "3. Wyszukaj ksiÄ…Å¼ki majÄ…ce tyle bÄ…dÅº wiÄ™cej stron" << std::endl;
+            std::cout << "4. Wyszukaj ksiÄ…Å¼ki majÄ…ce iloÅ›Ä‡ stron w podanym przedziale" << std::endl;
             std::cout << std::endl;
             std::cout << "0. Anuluj" << std::endl;
             std::cout << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "WybÃ³r: ";
             unsigned short choice1;
             std::cin >> choice1;
             std::cin.ignore(256, '\n');
@@ -932,7 +932,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             switch (choice1) {
             case 1: {
                 unsigned short strony;
-                std::cout << "Podaj iloœæ stron [dok³adnie ile]: ";
+                std::cout << "Podaj iloÅ›Ä‡ stron [dokÅ‚adnie ile]: ";
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -949,7 +949,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 2: {
                 unsigned short strony;
-                std::cout << "Podaj iloœæ stron [tyle lub mniej]: ";
+                std::cout << "Podaj iloÅ›Ä‡ stron [tyle lub mniej]: ";
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -966,7 +966,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 3: {
                 unsigned short strony;
-                std::cout << "Podaj iloœæ stron [tyle lub wiêcej]: ";
+                std::cout << "Podaj iloÅ›Ä‡ stron [tyle lub wiÄ™cej]: ";
                 std::cin >> strony;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -983,10 +983,10 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 4: {
                 unsigned short strony1, strony2;
-                std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+                std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
                 std::cin >> strony1;
                 std::cin.ignore(256, '\n');
-                std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+                std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
                 std::cin >> strony2;
                 std::cin.ignore(256, '\n');
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -1005,7 +1005,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         }
         case 7: {
             unsigned short min_wiek = 0;
-            std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie ksi¹¿ki: " << std::endl;
+            std::cout << "Podaj wiek, dla ktÃ³rego znaleÅºÄ‡ odpowiednie ksiÄ…Å¼ki: " << std::endl;
             std::cin >> min_wiek;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -1020,17 +1020,17 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             break;
         }
         case 8: {
-            std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
+            std::cout << "WyszukaÄ‡ po jakich ocenach?" << std::endl;
             std::cout << std::endl;
-            std::cout << "1. Wyszukaj ksi¹¿ki o dok³adnie takiej ocenie" << std::endl;
-            std::cout << "2. Wyszukaj ksi¹¿ki o gorszej lub takiej ocenie" << std::endl;
-            std::cout << "3. Wyszukaj ksi¹¿ki o lepszej lub takiej ocenie" << std::endl;
-            std::cout << "4. Wyszukaj ksi¹¿ki w podanym przedziale ocen" << std::endl;
-            std::cout << "5. Wyszukaj ksi¹¿ki jeszcze nie ocenione" << std::endl;
+            std::cout << "1. Wyszukaj ksiÄ…Å¼ki o dokÅ‚adnie takiej ocenie" << std::endl;
+            std::cout << "2. Wyszukaj ksiÄ…Å¼ki o gorszej lub takiej ocenie" << std::endl;
+            std::cout << "3. Wyszukaj ksiÄ…Å¼ki o lepszej lub takiej ocenie" << std::endl;
+            std::cout << "4. Wyszukaj ksiÄ…Å¼ki w podanym przedziale ocen" << std::endl;
+            std::cout << "5. Wyszukaj ksiÄ…Å¼ki jeszcze nie ocenione" << std::endl;
             std::cout << std::endl;
             std::cout << "0. Anuluj" << std::endl;
             std::cout << std::endl;
-            std::cout << "Wybór: ";
+            std::cout << "WybÃ³r: ";
             unsigned short choice1;
             std::cin >> choice1;
             std::cin.ignore(256, '\n');
@@ -1038,7 +1038,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             switch (choice1) {
             case 1: {
                 double ocena;
-                std::cout << "Podaj ocenê [dok³adnie tak¹]: ";
+                std::cout << "Podaj ocenÄ™ [dokÅ‚adnie takÄ…]: ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1055,7 +1055,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 2: {
                 double ocena;
-                std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
+                std::cout << "Podaj ocenÄ™ [gorszÄ… lub rÃ³wnÄ…]: ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;               
@@ -1072,7 +1072,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 3: {
                 double ocena;
-                std::cout << "Podaj ocenê [lepsz¹ lub równ¹]: ";
+                std::cout << "Podaj ocenÄ™ [lepszÄ… lub rÃ³wnÄ…]: ";
                 std::cin >> ocena;
                 std::cin.ignore(256, '\n');
                 std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1089,10 +1089,10 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
             }
             case 4: {
                 double ocena1, ocena2;
-                std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+                std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
                 std::cin >> ocena1;
                 std::cin.ignore(256, '\n');
-                std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+                std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
                 std::cin >> ocena2;
                 std::cin.ignore(256, '\n');
                 for (unsigned int i = 0; i < ksiazki.size(); i++) {
@@ -1123,7 +1123,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
         }
         break;
     }
-    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << ksiazek << std::endl;
+    std::cout << "Koniec wyszukiwania - " << results << " wynikÃ³w z " << ksiazek << std::endl;
     system("pause");
 }
 
@@ -1134,7 +1134,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     std::cout << "Opcje wyszukiwania: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
-    std::cout << "2. Szukaj po re¿yserze." << std::endl;
+    std::cout << "2. Szukaj po reÅ¼yserze." << std::endl;
     std::cout << "3. Szukaj po gatunku." << std::endl;
     std::cout << "4. Szukaj po roku wydania." << std::endl;
     std::cout << "5. Szukaj po czasie trwania." << std::endl;
@@ -1143,7 +1143,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     std::cout << std::endl;
     std::cout << "0. Anuluj wyszukiwanie." << std::endl;
     std::cout << std::endl;
-    std::cout << "Wybór: ";
+    std::cout << "WybÃ³r: ";
     unsigned short choice;
     std::cin >> choice;
     std::cin.ignore(256, '\n');
@@ -1151,7 +1151,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     switch (choice) {
     case 1: {
         std::string tytul;
-        std::cout << "Podaj tytu³ filmu do znalezienia: ";
+        std::cout << "Podaj tytuÅ‚ filmu do znalezienia: ";
         std::getline(std::cin, tytul);
         std::cout << "Wyniki wyszukiwania: " << std::endl;      
         for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1167,7 +1167,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 2: {
         std::string rezyser;
-        std::cout << "Podaj re¿ysera, którego filmy chcesz wyszukaæ: ";
+        std::cout << "Podaj reÅ¼ysera, ktÃ³rego filmy chcesz wyszukaÄ‡: ";
         std::getline(std::cin, rezyser);
         std::cout << "Wyniki wyszukiwania: " << std::endl;       
         for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1183,7 +1183,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 3: {
         std::string gatunek;
-        std::cout << "Podaj gatunek filmów, których chcesz wyszukaæ: ";
+        std::cout << "Podaj gatunek filmÃ³w, ktÃ³rych chcesz wyszukaÄ‡: ";
         std::getline(std::cin, gatunek);
         std::cout << "Wyniki wyszukiwania: " << std::endl;       
         for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1199,16 +1199,16 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 4: {
         unsigned short rok_wydania;
-        std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
+        std::cout << "W jaki sposÃ³b wyszukaÄ‡ po roku wydania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj filmy wydane w podanym roku" << std::endl;
-        std::cout << "2. Wyszukaj filmy wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
-        std::cout << "3. Wyszukaj filmy wydane w podanym roku b¹dŸ póŸniej" << std::endl;
+        std::cout << "2. Wyszukaj filmy wydane w podanym roku bÄ…dÅº wczeÅ›niej" << std::endl;
+        std::cout << "3. Wyszukaj filmy wydane w podanym roku bÄ…dÅº pÃ³Åºniej" << std::endl;
         std::cout << "4. Wyszukaj filmy wydane w podanym przedziale lat" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
@@ -1264,10 +1264,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
         }
         case 4: {
             unsigned short rok_wydania1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> rok_wydania1;
             std::cin.ignore(256, '\n');            
             for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1286,23 +1286,23 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 5: {
         unsigned short czas_trwania;
-        std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
+        std::cout << "W jaki sposÃ³b wyszukaÄ‡ po czasie trwania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj filmy trwaj¹ce tyle" << std::endl;
-        std::cout << "2. Wyszukaj filmy trwaj¹ce tyle b¹dŸ krócej" << std::endl;
-        std::cout << "3. Wyszukaj filmy trwaj¹ce tyle b¹dŸ d³u¿ej" << std::endl;
-        std::cout << "4. Wyszukaj filmy, których czas trwania jest w podanym przedziale" << std::endl;
+        std::cout << "1. Wyszukaj filmy trwajÄ…ce tyle" << std::endl;
+        std::cout << "2. Wyszukaj filmy trwajÄ…ce tyle bÄ…dÅº krÃ³cej" << std::endl;
+        std::cout << "3. Wyszukaj filmy trwajÄ…ce tyle bÄ…dÅº dÅ‚uÅ¼ej" << std::endl;
+        std::cout << "4. Wyszukaj filmy, ktÃ³rych czas trwania jest w podanym przedziale" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
         case 1: {
-            std::cout << "Podaj czas trwania w minutach [dok³adnie ile]: ";
+            std::cout << "Podaj czas trwania w minutach [dokÅ‚adnie ile]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;          
@@ -1334,7 +1334,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
             break;
         }
         case 3: {
-            std::cout << "Podaj czas trwania w minutach [tyle lub wiêcej]: ";
+            std::cout << "Podaj czas trwania w minutach [tyle lub wiÄ™cej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1351,10 +1351,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
         }
         case 4: {
             unsigned short czas_trwania1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> czas_trwania1;
             std::cin.ignore(256, '\n');           
             for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1373,7 +1373,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 6: {
         unsigned short min_wiek;
-        std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie filmy: " << std::endl;
+        std::cout << "Podaj wiek, dla ktÃ³rego znaleÅºÄ‡ odpowiednie filmy: " << std::endl;
         std::cin >> min_wiek;
         std::cin.ignore(256, '\n');        
         for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1389,9 +1389,9 @@ void szukajFilmu(std::vector<Film>& filmy) {
     }
     case 7: {
         double ocena;
-        std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
+        std::cout << "WyszukaÄ‡ po jakich ocenach?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj filmy o dok³adnie takiej ocenie" << std::endl;
+        std::cout << "1. Wyszukaj filmy o dokÅ‚adnie takiej ocenie" << std::endl;
         std::cout << "2. Wyszukaj filmy o gorszej lub takiej ocenie" << std::endl;
         std::cout << "3. Wyszukaj filmy o lepszej lub takiej ocenie" << std::endl;
         std::cout << "4. Wyszukaj filmy w podanym przedziale ocen" << std::endl;
@@ -1399,14 +1399,14 @@ void szukajFilmu(std::vector<Film>& filmy) {
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
         case 1: {
-            std::cout << "Podaj ocenê [dok³adnie tak¹]: ";
+            std::cout << "Podaj ocenÄ™ [dokÅ‚adnie takÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;           
@@ -1422,7 +1422,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
             break;
         }
         case 2: {
-            std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
+            std::cout << "Podaj ocenÄ™ [gorszÄ… lub rÃ³wnÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;           
@@ -1438,7 +1438,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
             break;
         }
         case 3: {
-            std::cout << "Podaj ocenê [lepsz¹ lub równ¹]: ";
+            std::cout << "Podaj ocenÄ™ [lepszÄ… lub rÃ³wnÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1455,10 +1455,10 @@ void szukajFilmu(std::vector<Film>& filmy) {
         }
         case 4: {
             double ocena1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> ocena1;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -1488,7 +1488,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
         break;
     }
     }
-    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << filmow << std::endl;
+    std::cout << "Koniec wyszukiwania - " << results << " wynikÃ³w z " << filmow << std::endl;
     system("pause");
 }
 
@@ -1503,13 +1503,13 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     std::cout << "3. Szukaj po gatunku." << std::endl;
     std::cout << "4. Szukaj po roku wydania." << std::endl;
     std::cout << "5. Szukaj po czasie trwania." << std::endl;
-    std::cout << "6. Szukaj po iloœci utworów." << std::endl;
+    std::cout << "6. Szukaj po iloÅ›ci utworÃ³w." << std::endl;
     std::cout << "7. Szukaj po ograniczeniu wiekowym." << std::endl;
     std::cout << "8. Szukaj po ocenie." << std::endl;
     std::cout << std::endl;
     std::cout << "0. Anuluj wyszukiwanie." << std::endl;
     std::cout << std::endl;
-    std::cout << "Wybór: ";
+    std::cout << "WybÃ³r: ";
     unsigned short choice;
     std::cin >> choice;
     std::cin.ignore(256, '\n');
@@ -1517,7 +1517,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     switch (choice) {
     case 1: {
         std::string tytul;
-        std::cout << "Podaj tytu³ albumu muzycznego do znalezienia: ";
+        std::cout << "Podaj tytuÅ‚ albumu muzycznego do znalezienia: ";
         std::getline(std::cin, tytul);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1533,7 +1533,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 2: {
         std::string autor;
-        std::cout << "Podaj autora, którego album muzyczny chcesz wyszukaæ: ";
+        std::cout << "Podaj autora, ktÃ³rego album muzyczny chcesz wyszukaÄ‡: ";
         std::getline(std::cin, autor);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1549,7 +1549,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 3: {
         std::string gatunek;
-        std::cout << "Podaj gatunek muzyczny, którego chcesz wyszukaæ: ";
+        std::cout << "Podaj gatunek muzyczny, ktÃ³rego chcesz wyszukaÄ‡: ";
         std::getline(std::cin, gatunek);
         std::cout << "Wyniki wyszukiwania: " << std::endl;
         for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1565,16 +1565,16 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 4: {
         unsigned short rok_wydania;
-        std::cout << "W jaki sposób wyszukaæ po roku wydania?" << std::endl;
+        std::cout << "W jaki sposÃ³b wyszukaÄ‡ po roku wydania?" << std::endl;
         std::cout << std::endl;
         std::cout << "1. Wyszukaj albumy wydane w podanym roku" << std::endl;
-        std::cout << "2. Wyszukaj albumy wydane w podanym roku b¹dŸ wczeœniej" << std::endl;
-        std::cout << "3. Wyszukaj albumy wydane w podanym roku b¹dŸ póŸniej" << std::endl;
+        std::cout << "2. Wyszukaj albumy wydane w podanym roku bÄ…dÅº wczeÅ›niej" << std::endl;
+        std::cout << "3. Wyszukaj albumy wydane w podanym roku bÄ…dÅº pÃ³Åºniej" << std::endl;
         std::cout << "4. Wyszukaj albumy wydane w podanym przedziale lat" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
@@ -1630,10 +1630,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         }
         case 4: {
             unsigned short rok_wydania1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> rok_wydania;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> rok_wydania1;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1652,23 +1652,23 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 5: {
         unsigned short czas_trwania;
-        std::cout << "W jaki sposób wyszukaæ po czasie trwania?" << std::endl;
+        std::cout << "W jaki sposÃ³b wyszukaÄ‡ po czasie trwania?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj albumy trwaj¹ce dok³adnie tyle" << std::endl;
-        std::cout << "2. Wyszukaj albumy trwaj¹ce tyle b¹dŸ krócej" << std::endl;
-        std::cout << "3. Wyszukaj albumy trwaj¹ce tyle b¹dŸ d³u¿ej" << std::endl;
-        std::cout << "4. Wyszukaj albumy, których czas trwania jest w podanym przedziale" << std::endl;
+        std::cout << "1. Wyszukaj albumy trwajÄ…ce dokÅ‚adnie tyle" << std::endl;
+        std::cout << "2. Wyszukaj albumy trwajÄ…ce tyle bÄ…dÅº krÃ³cej" << std::endl;
+        std::cout << "3. Wyszukaj albumy trwajÄ…ce tyle bÄ…dÅº dÅ‚uÅ¼ej" << std::endl;
+        std::cout << "4. Wyszukaj albumy, ktÃ³rych czas trwania jest w podanym przedziale" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
         case 1: {
-            std::cout << "Podaj czas trwania w minutach [dok³adnie ile]: ";
+            std::cout << "Podaj czas trwania w minutach [dokÅ‚adnie ile]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1700,7 +1700,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 3: {
-            std::cout << "Podaj czas trwania w minutach [tyle lub wiêcej]: ";
+            std::cout << "Podaj czas trwania w minutach [tyle lub wiÄ™cej]: ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1717,10 +1717,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         }
         case 4: {
             unsigned short czas_trwania1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> czas_trwania;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> czas_trwania1;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1739,23 +1739,23 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 6: {
         unsigned short utworow;
-        std::cout << "W jaki sposób wyszukaæ po iloœci utworów?" << std::endl;
+        std::cout << "W jaki sposÃ³b wyszukaÄ‡ po iloÅ›ci utworÃ³w?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj albumy, które maj¹ dok³adnie tyle utworów" << std::endl;
-        std::cout << "2. Wyszukaj albumy, które maj¹ tyle b¹dŸ mniej utworów" << std::endl;
-        std::cout << "3. Wyszukaj albumy, które maj¹ tyle badŸ wiêcej utworów" << std::endl;
-        std::cout << "4. Wyszukaj albumy, których iloœæ utworów jest w podanym przedziale" << std::endl;
+        std::cout << "1. Wyszukaj albumy, ktÃ³re majÄ… dokÅ‚adnie tyle utworÃ³w" << std::endl;
+        std::cout << "2. Wyszukaj albumy, ktÃ³re majÄ… tyle bÄ…dÅº mniej utworÃ³w" << std::endl;
+        std::cout << "3. Wyszukaj albumy, ktÃ³re majÄ… tyle badÅº wiÄ™cej utworÃ³w" << std::endl;
+        std::cout << "4. Wyszukaj albumy, ktÃ³rych iloÅ›Ä‡ utworÃ³w jest w podanym przedziale" << std::endl;
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
         case 1: {           
-            std::cout << "Podaj iloœæ utworów [dok³adnie ile]: ";
+            std::cout << "Podaj iloÅ›Ä‡ utworÃ³w [dokÅ‚adnie ile]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1771,7 +1771,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 2: {
-            std::cout << "Podaj iloœæ utworów [tyle lub mniej]: ";
+            std::cout << "Podaj iloÅ›Ä‡ utworÃ³w [tyle lub mniej]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1787,7 +1787,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 3: {
-            std::cout << "Podaj iloœæ utworów [tyle lub wiêcej]: ";
+            std::cout << "Podaj iloÅ›Ä‡ utworÃ³w [tyle lub wiÄ™cej]: ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1804,10 +1804,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         }
         case 4: {
             unsigned short utworow1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> utworow;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> utworow1;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1826,7 +1826,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 7: {
         unsigned short min_wiek;
-        std::cout << "Podaj wiek, dla którego znaleŸæ odpowiednie albumy muzyczne: " << std::endl;
+        std::cout << "Podaj wiek, dla ktÃ³rego znaleÅºÄ‡ odpowiednie albumy muzyczne: " << std::endl;
         std::cin >> min_wiek;
         std::cin.ignore(256, '\n');
         for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1842,9 +1842,9 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     }
     case 8: {
         double ocena;
-        std::cout << "Wyszukaæ po jakich ocenach?" << std::endl;
+        std::cout << "WyszukaÄ‡ po jakich ocenach?" << std::endl;
         std::cout << std::endl;
-        std::cout << "1. Wyszukaj albumy o dok³adnie takiej ocenie" << std::endl;
+        std::cout << "1. Wyszukaj albumy o dokÅ‚adnie takiej ocenie" << std::endl;
         std::cout << "2. Wyszukaj albumy o gorszej lub takiej samej ocenie" << std::endl;
         std::cout << "3. Wyszukaj albumy o lepszej lub takiej samej ocenie" << std::endl;
         std::cout << "4. Wyszukaj albumy w podanym przedziale ocen" << std::endl;
@@ -1852,14 +1852,14 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         std::cout << std::endl;
         std::cout << "0. Anuluj" << std::endl;
         std::cout << std::endl;
-        std::cout << "Wybór: ";
+        std::cout << "WybÃ³r: ";
         unsigned short choice1;
         std::cin >> choice1;
         std::cin.ignore(256, '\n');
         system("cls");
         switch (choice1) {
         case 1: {
-            std::cout << "Podaj ocenê [dok³adnie tak¹]: ";
+            std::cout << "Podaj ocenÄ™ [dokÅ‚adnie takÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1875,7 +1875,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 2: {
-            std::cout << "Podaj ocenê [gorsz¹ lub równ¹]: ";
+            std::cout << "Podaj ocenÄ™ [gorszÄ… lub rÃ³wnÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1891,7 +1891,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
             break;
         }
         case 3: {
-            std::cout << "Podaj ocenê [lepsz¹ lub równ¹]: ";
+            std::cout << "Podaj ocenÄ™ [lepszÄ… lub rÃ³wnÄ…]: ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
             std::cout << "Wyniki wyszukiwania: " << std::endl;
@@ -1908,10 +1908,10 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         }
         case 4: {
             double ocena1;
-            std::cout << "Podaj pocz¹tek przedzia³u (domkniêty): ";
+            std::cout << "Podaj poczÄ…tek przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> ocena;
             std::cin.ignore(256, '\n');
-            std::cout << "Podaj koniec przedzia³u (domkniêty): ";
+            std::cout << "Podaj koniec przedziaÅ‚u (domkniÄ™ty): ";
             std::cin >> ocena1;
             std::cin.ignore(256, '\n');
             for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1941,16 +1941,16 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
         break;
     }
     }
-    std::cout << "Koniec wyszukiwania - " << results << " wyników z " << albumow << std::endl;
+    std::cout << "Koniec wyszukiwania - " << results << " wynikÃ³w z " << albumow << std::endl;
     system("pause");
 }
 
-// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- uk³ad obiektu typu ksi¹zka
+// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- ukÅ‚ad obiektu typu ksiÄ…zka
 void zapiszKsiazki(const std::vector<Ksiazka>& db, const std::string name) {
     std::fstream plik;
     const std::string filename = name + "_k.csv";
     plik.open(filename, std::ios::out);
-    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Iloœæ stron\",\"Autor\",\"Wydawnictwo\",\"Gatunek\"" << std::endl;
+    plik << "\"TytuÅ‚\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"IloÅ›Ä‡ stron\",\"Autor\",\"Wydawnictwo\",\"Gatunek\"" << std::endl;
     for (unsigned int i = 0; i < db.size(); i++) {
         if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
         plik << ',';
@@ -1972,15 +1972,15 @@ void zapiszKsiazki(const std::vector<Ksiazka>& db, const std::string name) {
         plik << ',';
     }
     plik.close();
-    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+    std::cout << "Zapisano bazÄ™ danych do pliku " << filename << std::endl;
 }
 
-//Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek); <- uk³ad obiektu typu film
+//Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek); <- ukÅ‚ad obiektu typu film
 void zapiszFilmy(const std::vector<Film>& db, const std::string name) {
     std::fstream plik;
     const std::string filename = name + "_f.csv";
     plik.open(filename, std::ios::out);
-    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"Re¿yser\",\"Gatunek\"" << std::endl;
+    plik << "\"TytuÅ‚\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"ReÅ¼yser\",\"Gatunek\"" << std::endl;
     for (unsigned int i = 0; i < db.size(); i++) {
         if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
         plik << ',';
@@ -2000,15 +2000,15 @@ void zapiszFilmy(const std::vector<Film>& db, const std::string name) {
         plik << ',';
     }
     plik.close();
-    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+    std::cout << "Zapisano bazÄ™ danych do pliku " << filename << std::endl;
 }
 
-//Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- uk³ad obiektu typu album_muzyczny
+//Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- ukÅ‚ad obiektu typu album_muzyczny
 void zapiszMuzyke(const std::vector<Album_muzyczny>& db, const std::string name) {
     std::fstream plik;
     const std::string filename = name + "_m.csv";
     plik.open(filename, std::ios::out);
-    plik << "\"Tytu³\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"Liczba utworów\",\"Autor\",\"Gatunek\"" << std::endl;
+    plik << "\"TytuÅ‚\",\"Rok wydania\",\"Ocena\",\"Min. ograniczenie wiekowe\",\"Ulubione\",\"Czas trwania [m]\",\"Liczba utworÃ³w\",\"Autor\",\"Gatunek\"" << std::endl;
     for (unsigned int i = 0; i < db.size(); i++) {
         if (db.at(i).tytul != "\0") plik << db.at(i).tytul;
         plik << ',';
@@ -2030,10 +2030,10 @@ void zapiszMuzyke(const std::vector<Album_muzyczny>& db, const std::string name)
         plik << ',';
     }
     plik.close();
-    std::cout << "Zapisano bazê danych do pliku " << filename << std::endl;
+    std::cout << "Zapisano bazÄ™ danych do pliku " << filename << std::endl;
 }
 
-// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- uk³ad obiektu typu ksi¹zka
+// Ksiazka n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.strony, x.autor, x.wydawnictwo, x.gatunek) <- ukÅ‚ad obiektu typu ksiÄ…zka
 void wczytajKsiazki(std::vector<Ksiazka>& db, const std::string name) {
 
     std::string tytul="\0";
@@ -2075,10 +2075,10 @@ void wczytajKsiazki(std::vector<Ksiazka>& db, const std::string name) {
         linecount++;
     }
     plik.close();
-    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+    std::cout << "Wczytano folder z ksiÄ…zkami z pliku " << filename << std::endl;
 }
 
-// Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek) <- uk³ad obiektu typu film
+// Film n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.rezyser, x.gatunek) <- ukÅ‚ad obiektu typu film
 void wczytajFilmy(std::vector<Film>& db, const std::string name) {
 
     std::string tytul = "\0";
@@ -2118,10 +2118,10 @@ void wczytajFilmy(std::vector<Film>& db, const std::string name) {
         linecount++;
     }
     plik.close();
-    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+    std::cout << "Wczytano folder z ksiÄ…zkami z pliku " << filename << std::endl;
 }
 
-// Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- uk³ad obiektu typu album_muzyczny
+// Album_muzyczny n(x.tytul, x.rok_wydania, x.ocena, x.min_wiek, x.ulubione, x.czas_trwania, x.utworow, x.autor, x.gatunek); <- ukÅ‚ad obiektu typu album_muzyczny
 void wczytajMuzyke(std::vector<Album_muzyczny>& db, const std::string name) {
 
     std::string tytul = "\0";
@@ -2163,5 +2163,5 @@ void wczytajMuzyke(std::vector<Album_muzyczny>& db, const std::string name) {
         linecount++;
     }
     plik.close();
-    std::cout << "Wczytano folder z ksi¹zkami z pliku " << filename << std::endl;
+    std::cout << "Wczytano folder z ksiÄ…zkami z pliku " << filename << std::endl;
 }

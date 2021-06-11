@@ -1,9 +1,9 @@
-#include "Ksiazka.h"
+﻿#include "Ksiazka.h"
 
 unsigned int Ksiazka::liczbaKsiazek = 0;
 
 void Ksiazka::wyswietl() {
-    std::cout << "Tytu�:\t\t\t" << this->tytul << std::endl;
+    std::cout << "Tytuł:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
     std::cout << "Wydawnictwo:\t\t" << this->wydawnictwo << std::endl;
     std::cout << "Gatunek: \t\t" << this->gatunek << std::endl;

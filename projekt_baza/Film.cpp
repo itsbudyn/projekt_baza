@@ -1,10 +1,10 @@
-#include "Film.h"
+ï»¿#include "Film.h"
 
 unsigned int Film::liczbaFilmow = 0;
 
 void Film::wyswietl() {
-    std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
-    std::cout << "Re¿yser:\t\t" << this->rezyser << std::endl;
+    std::cout << "TytuÅ‚:\t\t\t" << this->tytul << std::endl;
+    std::cout << "ReÅ¼yser:\t\t" << this->rezyser << std::endl;
     std::cout << "Gatunek: \t\t" << this->gatunek << std::endl;
     std::cout << "Rok wydania:\t\t" << this->rok_wydania << std::endl;
     std::cout << std::endl;

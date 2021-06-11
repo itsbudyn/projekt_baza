@@ -1,15 +1,15 @@
-#include "Album_muzyczny.h"
+ï»¿#include "Album_muzyczny.h"
 
 unsigned int Album_muzyczny::liczbaAlbumow = 0;
 
 void Album_muzyczny::wyswietl() {
-    std::cout << "Tytu³:\t\t\t" << this->tytul << std::endl;
+    std::cout << "TytuÅ‚:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
     std::cout << "Gatunek:\t\t" << this->gatunek << std::endl;
     std::cout << "Rok wydania:\t\t" << this->rok_wydania << std::endl;
     std::cout << std::endl;
     std::cout << "Czas trwania:\t\t" << this->czas_trwania << " minut" << std::endl;
-    std::cout << "Liczba utworów:\t\t" << this->utworow << std::endl;
+    std::cout << "Liczba utworÃ³w:\t\t" << this->utworow << std::endl;
     std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << "+" << std::endl;
     std::cout << std::endl;
     std::cout << "Ocena:\t\t\t" << this->ocena << " / 5" << std::endl;
