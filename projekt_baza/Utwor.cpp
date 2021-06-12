@@ -10,7 +10,7 @@ unsigned int Utwor::zwrocLiczbeUtworow() {
     return liczbaUtworow;
 }
 
-// konstruktor domyślny
+// konstruktor bezargumentowy
 Utwor::Utwor() {
     liczbaUtworow++;
 }

@@ -23,7 +23,7 @@ unsigned int Film::zwrocLiczbeFilmow() {
     return liczbaFilmow;
 }
 
-// konstruktor domyślny
+// konstruktor bezargumentowy
 Film::Film() {
     liczbaFilmow++;
 }

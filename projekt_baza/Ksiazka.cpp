@@ -34,7 +34,7 @@ unsigned int Ksiazka::zwrocLiczbeKsiazek() {
     return liczbaKsiazek;
 }
 
-// konstruktor domyślny
+// konstruktor bezargumentowy
 Ksiazka::Ksiazka() {
     liczbaKsiazek++;
 }

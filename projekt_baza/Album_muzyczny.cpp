@@ -24,7 +24,7 @@ unsigned int Album_muzyczny::zwrocLiczbeAlbumow() {
     return liczbaAlbumow;
 }
 
-// konstruktor domyślny
+// konstruktor bezargumentowy
 Album_muzyczny::Album_muzyczny() {
     liczbaAlbumow++;
 }
