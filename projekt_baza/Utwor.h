@@ -23,7 +23,7 @@ public:
     // metody
     virtual void wyswietl() = 0; // metoda wirtualna
     bool czyUlubione();
-    unsigned int zwrocLiczbeUtworow();
+    static unsigned int zwrocLiczbeUtworow();
 
     // konstruktory i destruktor
     Utwor();

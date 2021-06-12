@@ -17,7 +17,7 @@ public:
     friend void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka);
     friend void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka);
     friend void zapiszMuzyke(const std::vector<Album_muzyczny>& db, const std::string name);
-    unsigned int zwrocLiczbeAlbumow();
+    static unsigned int zwrocLiczbeAlbumow();
 
     // konstruktory i destruktor
     Album_muzyczny();

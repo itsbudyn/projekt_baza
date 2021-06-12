@@ -748,7 +748,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
     // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, autor, wydawnictwo, gatunek);
     Utwor* wsk;
     unsigned short results = 0;
-    unsigned short ksiazek = 0;
+    unsigned short ksiazek = Ksiazka::zwrocLiczbeKsiazek();
     std::cout << "Opcje wyszukiwania książki: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -780,7 +780,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
             break;
         }
@@ -796,7 +795,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
             break;
         }
@@ -812,7 +810,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
             break;
         }
@@ -828,7 +825,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
             break;
         }
@@ -861,7 +857,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
-                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
                     break;
                 }
@@ -878,7 +873,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
-                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
                     break;
                 }
@@ -895,7 +889,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
-                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
                     break;
                 }
@@ -914,7 +907,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                             wsk->wyswietl();
                             results++;
                         }
-                        if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                     }
                     break;
                 }
@@ -950,7 +942,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -967,7 +958,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -984,7 +974,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1003,7 +992,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1022,7 +1010,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
             }
             break;
         }
@@ -1056,7 +1043,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1073,7 +1059,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1090,7 +1075,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1109,7 +1093,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1121,7 +1104,6 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
                         wsk->wyswietl();
                         results++;
                     }
-                    if (i + 1 == ksiazki.size()) ksiazek = ksiazki.at(i).zwrocLiczbeKsiazek();
                 }
                 break;
             }
@@ -1138,7 +1120,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
     // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, rezyser, gatunek);
     Utwor* wsk;
     unsigned short results = 0;
-    unsigned short filmow = 0;
+    unsigned short filmow = Film::zwrocLiczbeFilmow();
     std::cout << "Opcje wyszukiwania: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -1169,7 +1151,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
         break;
     }
@@ -1185,7 +1166,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
         break;
     }
@@ -1201,7 +1181,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
         break;
     }
@@ -1234,7 +1213,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1250,7 +1228,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1266,7 +1243,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1285,7 +1261,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1321,7 +1296,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1337,7 +1311,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1353,7 +1326,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1372,7 +1344,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1391,7 +1362,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
         }
         break;
     }
@@ -1425,7 +1395,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1441,7 +1410,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1457,7 +1425,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1476,7 +1443,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1488,7 +1454,6 @@ void szukajFilmu(std::vector<Film>& filmy) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == filmy.size())filmow = filmy.at(i).zwrocLiczbeFilmow();
             }
             break;
         }
@@ -1504,7 +1469,7 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
     // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, utworow, autor, gatunek);
     Utwor* wsk;
     unsigned short results = 0;
-    unsigned short albumow = 0;
+    unsigned short albumow = Album_muzyczny::zwrocLiczbeAlbumow();
     std::cout << "Opcje wyszukiwania: " << std::endl;
     std::cout << std::endl;
     std::cout << "1. Szukaj po tytule." << std::endl;
@@ -1536,7 +1501,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
         break;
     }
@@ -1552,7 +1516,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
         break;
     }
@@ -1568,7 +1531,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
         break;
     }
@@ -1601,7 +1563,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1617,7 +1578,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1633,7 +1593,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1652,7 +1611,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1688,7 +1646,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1704,7 +1661,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1720,7 +1676,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1739,7 +1694,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1775,7 +1729,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1791,7 +1744,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1807,7 +1759,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1826,7 +1777,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1845,7 +1795,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                 wsk->wyswietl();
                 results++;
             }
-            if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
         }
         break;
     }
@@ -1879,7 +1828,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1895,7 +1843,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1911,7 +1858,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1930,7 +1876,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }
@@ -1942,7 +1887,6 @@ void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
                     wsk->wyswietl();
                     results++;
                 }
-                if (i + 1 == muzyka.size())albumow = muzyka.at(i).zwrocLiczbeAlbumow();
             }
             break;
         }

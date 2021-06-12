@@ -6,7 +6,7 @@ bool Utwor::czyUlubione() {
     return this->ulubione;
 }
 
-unsigned int Utwor::zwrocLiczbeUtworow() {
+unsigned int Utwor::zwrocLiczbeUtworow(){
     return liczbaUtworow;
 }
 

@@ -17,7 +17,7 @@ public:
     friend void edytujKsiazki(std::vector<Ksiazka>& ksiazki);
     friend void szukajKsiazki(std::vector<Ksiazka>& ksiazki);
     friend void zapiszKsiazki(const std::vector<Ksiazka>& db, const std::string filename);
-    unsigned int zwrocLiczbeKsiazek();
+    static unsigned int zwrocLiczbeKsiazek();
 
     // konstruktory i destruktory
     Ksiazka();

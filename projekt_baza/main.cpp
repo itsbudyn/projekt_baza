@@ -34,10 +34,10 @@ int main()
         std::cout << "0. Wyjdź." << std::endl;
         std::cout << std::endl;
         std::cout << "Statystyki" << std::endl;
-        std::cout << "Przedmiotów:\t" << ksiazki.size() + filmy.size() + muzyka.size() << std::endl;
-        std::cout << "Książek:\t" << ksiazki.size() << std::endl;
-        std::cout << "Filmów:\t\t" << filmy.size() << std::endl;
-        std::cout << "Albumów muz.:\t" << muzyka.size() << std::endl;
+        std::cout << "Przedmiotów:\t" << Utwor::zwrocLiczbeUtworow() << std::endl;
+        std::cout << "Książek:\t" << Ksiazka::zwrocLiczbeKsiazek() << std::endl;
+        std::cout << "Filmów:\t\t" << Film::zwrocLiczbeFilmow() << std::endl;
+        std::cout << "Albumów muz.:\t" << Album_muzyczny::zwrocLiczbeAlbumow() << std::endl;
         std::cout << std::endl;
         std::cout << "Wybór: ";
         std::cin >> choice;
