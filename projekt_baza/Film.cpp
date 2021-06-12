@@ -2,7 +2,7 @@
 
 unsigned int Film::liczbaFilmow = 0;
 
-void Film::wyswietl() {
+void Film::wyswietl() const{
     std::cout << "Tytuł:\t\t\t" << this->tytul << std::endl;
     std::cout << "Reżyser:\t\t" << this->rezyser << std::endl;
     std::cout << "Gatunek: \t\t" << this->gatunek << std::endl;

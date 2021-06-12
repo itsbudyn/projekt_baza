@@ -12,7 +12,7 @@ private:
 
 public:
     // metody
-    void wyswietl();
+    void wyswietl() const;
     friend void edytujFilmy(std::vector<Film>& filmy);
     friend void szukajFilmu(std::vector<Film>& filmy);
     friend void zapiszFilmy(const std::vector<Film>& db, const std::string name);

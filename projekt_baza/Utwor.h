@@ -21,7 +21,7 @@ protected:
 
 public:
     // metody
-    virtual void wyswietl() = 0; // metoda wirtualna
+    virtual void wyswietl() const = 0; // metoda wirtualna
     bool czyUlubione();
     static unsigned int zwrocLiczbeUtworow();
 

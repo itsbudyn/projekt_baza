@@ -12,7 +12,7 @@
 
 unsigned int Ksiazka::liczbaKsiazek = 0;
 
-void Ksiazka::wyswietl() {
+void Ksiazka::wyswietl() const{
     std::cout << "Tytuł:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
     std::cout << "Wydawnictwo:\t\t" << this->wydawnictwo << std::endl;

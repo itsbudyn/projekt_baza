@@ -2,7 +2,7 @@
 
 unsigned int Album_muzyczny::liczbaAlbumow = 0;
 
-void Album_muzyczny::wyswietl() {
+void Album_muzyczny::wyswietl() const{
     std::cout << "Tytuł:\t\t\t" << this->tytul << std::endl;
     std::cout << "Autorzy:\t\t" << this->autor << std::endl;
     std::cout << "Gatunek:\t\t" << this->gatunek << std::endl;
