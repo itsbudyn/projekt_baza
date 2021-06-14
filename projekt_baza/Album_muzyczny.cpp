@@ -12,7 +12,10 @@ void Album_muzyczny::wyswietl() const{
     std::cout << "Liczba utworów:\t\t" << this->utworow << std::endl;
     std::cout << "Ograniczenia wiekowe:\t" << this->min_wiek << "+" << std::endl;
     std::cout << std::endl;
-    std::cout << "Ocena:\t\t\t" << this->ocena << " / 5" << std::endl;
+    std::cout << "Ocena:\t\t\t";
+    if (this->ocena != 0) std::cout << this->ocena << " / 5";
+    else std::cout << "Nieocenione";
+    std::cout << std::endl;
     std::cout << "Ulubione:\t\t";
     if (this->ulubione == true) std::cout << "Tak";
     else std::cout << "Nie";
