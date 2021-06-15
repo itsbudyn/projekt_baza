@@ -54,7 +54,7 @@ void dodaj_ksiazke(std::vector<Ksiazka>& k) {
 }
 
 void dodaj_film(std::vector<Film>& f) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, rezyser, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, rezyser, gatunek);
     std::string tytul;
     unsigned short rok_wydania;
     double ocena;
@@ -103,7 +103,7 @@ void dodaj_film(std::vector<Film>& f) {
 }
 
 void dodaj_album(std::vector<Album_muzyczny>& a) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, utworow, autor, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
     std::string tytul; 
     unsigned short rok_wydania; 
     double ocena; 
@@ -356,7 +356,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
 }
 
 void edytujFilmy(std::vector<Film>& filmy) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, rezyser, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, rezyser, gatunek);
     Utwor* wsk;
     unsigned short int choice;
     for (unsigned int i = 0; i < filmy.size(); i++) {
@@ -545,7 +545,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
 }
 
 void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, utworow, autor, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
     Utwor* wsk;
     unsigned short int choice;
     for (unsigned int i = 0; i < muzyka.size(); i++) {
@@ -1117,7 +1117,7 @@ void szukajKsiazki(std::vector<Ksiazka>& ksiazki) {
 }
 
 void szukajFilmu(std::vector<Film>& filmy) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, rezyser, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, rezyser, gatunek);
     Utwor* wsk;
     unsigned short results = 0;
     unsigned short filmow = Film::zwrocLiczbeFilmow();
@@ -1466,7 +1466,7 @@ void szukajFilmu(std::vector<Film>& filmy) {
 }
 
 void szukajAlbumuMuzycznego(std::vector<Album_muzyczny>& muzyka) {
-    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, czas_trwania, utworow, autor, gatunek);
+    // spis treści konstruktora: (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
     Utwor* wsk;
     unsigned short results = 0;
     unsigned short albumow = Album_muzyczny::zwrocLiczbeAlbumow();
