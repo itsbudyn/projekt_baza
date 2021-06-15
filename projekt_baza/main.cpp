@@ -152,6 +152,7 @@ int main()
                 std::cout << "Wybór: ";
                 std::cin >> choice1;
                 std::cin.ignore(256, '\n');
+                system("cls");
                 switch (choice1) {
                     case 1: {
                         szukajKsiazki(ksiazki);
