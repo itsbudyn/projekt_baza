@@ -13,6 +13,7 @@ private:
 public:
     // metody
     void wyswietl() const;
+    unsigned short zwrocCzasTrwania() const;
     friend void edytujFilmy(std::vector<Film>& filmy);
     friend void szukajFilmu(std::vector<Film>& filmy);
     friend void zapiszFilmy(const std::vector<Film>& db, const std::string name);

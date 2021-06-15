@@ -22,6 +22,16 @@ void Album_muzyczny::wyswietl() const{
     std::cout << std::endl;
 }
 
+// metoda zwracająca czas trwania albumu
+unsigned short Album_muzyczny::zwrocCzasTrwania() const {
+    return czas_trwania;
+}
+
+// metoda zwracająca liczbe utworów w albumie
+unsigned short Album_muzyczny::zwrocLiczbeUtworow() const {
+    return utworow;
+}
+
 // metoda zwracająca wartość składnika statycznego
 unsigned int Album_muzyczny::zwrocLiczbeAlbumow() {
     return liczbaAlbumow;

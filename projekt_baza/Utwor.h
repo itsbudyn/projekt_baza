@@ -25,6 +25,11 @@ public:
     bool czyUlubione();
     static unsigned int zwrocLiczbeUtworow();
 
+    std::string zwrocTytul() const;
+    unsigned short zwrocRokWydania() const;
+    double zwrocOcene() const;
+    unsigned short zwrocMinWiek()const;
+
     // konstruktory i destruktor
     Utwor();
     Utwor(std::string u_tytul, unsigned short u_rok_wydania, double u_ocena, unsigned short u_min_wiek, bool u_ulubione);

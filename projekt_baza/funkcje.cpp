@@ -36,11 +36,11 @@ void dodaj_ksiazke(std::vector<Ksiazka>& k) {
     std::cin >> min_wiek;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Ocena? (0-5)";
+    std::cout << "Ocena? (0-5): ";
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyć jako ulubione? [t/N]";
+    std::cout << "Oznaczyć jako ulubione? [t/N]: ";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -85,11 +85,11 @@ void dodaj_film(std::vector<Film>& f) {
     std::cin >> min_wiek;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Ocena? (0-5)";
+    std::cout << "Ocena? (0-5): ";
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyć jako ulubione? [t/N]";
+    std::cout << "Oznaczyć jako ulubione? [t/N]: ";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -139,11 +139,11 @@ void dodaj_album(std::vector<Album_muzyczny>& a) {
     std::cin >> min_wiek;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Ocena? (0-5)";
+    std::cout << "Ocena? (0-5): ";
     std::cin >> ocena;
     std::cin.ignore(256, '\n');
 
-    std::cout << "Oznaczyć jako ulubione? [t/N]";
+    std::cout << "Oznaczyć jako ulubione? [t/N]: ";
     char wybor;
     std::cin >> wybor;
     std::cin.ignore(256, '\n');
@@ -170,6 +170,7 @@ void edytujKsiazki(std::vector<Ksiazka>& ksiazki) {
     std::cout << "Wybierz przedmiot do edycji (0 aby anulować): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
+    system("cls");
     if (choice != 0 && choice<=ksiazki.size()) {
         wsk = &ksiazki.at(choice - 1);
         wsk->wyswietl();
@@ -369,6 +370,7 @@ void edytujFilmy(std::vector<Film>& filmy) {
     std::cout << "Wybierz przedmiot do edycji (0 aby anulować): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
+    system("cls");
     if (choice != 0 && choice <= filmy.size()) {
         wsk = &filmy.at(choice - 1);
         wsk->wyswietl();
@@ -558,6 +560,7 @@ void edytujAlbumMuzyczny(std::vector<Album_muzyczny>& muzyka) {
     std::cout << "Wybierz przedmiot do edycji (0 aby anulować): ";
     std::cin >> choice;
     std::cin.ignore(256, '\n');
+    system("cls");
     if (choice != 0 && choice <= muzyka.size()) {
         wsk = &muzyka.at(choice - 1);
         wsk->wyswietl();
@@ -2117,4 +2120,146 @@ void wczytajMuzyke(std::vector<Album_muzyczny>& db, const std::string name) {
     }
     plik.close();
     std::cout << "Wczytano folder z ksiązkami z pliku " << filename << std::endl;
+}
+
+double findmin(const std::vector<double>& k) {
+    if (k.size() == 0) return 0;
+    double min = k.at(0);
+    for (auto i : k) {
+        if (i < min) min = i;
+    }
+    return min;
+}
+
+double findmax(const std::vector<double>& k) {
+    if (k.size() == 0) return 0;
+    double max = k.at(0);
+    for (auto i : k) {
+        if (i > max) max = i;
+    }
+    return max;
+}
+
+double findavg(const std::vector<double>& k) {
+    if (k.size() == 0) return 0;
+    double avg = 0;
+    double n = 0;
+    for (auto i : k) {
+        n += i;
+    }
+    if (k.size() > 0) avg = n / k.size();
+    return avg;
+}
+
+double findsum(const std::vector<double>& k) {
+    if (k.size() == 0) return 0;
+    double sum = 0;
+    for (auto i : k) {
+        sum += i;
+    }
+    return sum;
+}
+
+void statsMenu(const std::vector<Ksiazka>& k, const std::vector<Film>& f, const std::vector<Album_muzyczny>& m) {
+    // Ksiazka  (tytul, rok_wydania, ocena, min_wiek, ulubione, strony, autor, wydawnictwo, gatunek);
+    // Film     (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, rezyser, gatunek);
+    // Muzyka   (tytul, rok_wydania, ocena, min_wiek, ulubione, czas_trwania, utworow, autor, gatunek);
+
+    std::cout << "Zaawansowane statystyki: " << std::endl;
+    std::cout << "Przedmiotów:\t" << Utwor::zwrocLiczbeUtworow() << std::endl;
+    std::cout << "Książek:\t" << Ksiazka::zwrocLiczbeKsiazek() << std::endl;
+    std::cout << "Filmów:\t\t" << Film::zwrocLiczbeFilmow() << std::endl;
+    std::cout << "Albumów muz.:\t" << Album_muzyczny::zwrocLiczbeAlbumow() << std::endl << std::endl;
+
+    std::vector<double> oceny_k;
+    std::vector<double> oceny_f;
+    std::vector<double> oceny_m;
+
+    std::vector<double> minwiek_k;
+    std::vector<double> minwiek_f;
+    std::vector<double> minwiek_m;
+
+    std::vector<double> strony;
+
+    std::vector<double> czas_trwania_f;
+
+    std::vector<double> czas_trwania_m;
+
+    std::vector<double> utworow;
+
+    if (Ksiazka::zwrocLiczbeKsiazek()) {
+        for (unsigned int i = 0; i < k.size(); i++) {
+            oceny_k.push_back(k.at(i).zwrocOcene());
+            minwiek_k.push_back(k.at(i).zwrocMinWiek());
+            strony.push_back(k.at(i).zwrocStrony());
+        }
+    }
+
+    if (Film::zwrocLiczbeFilmow()) {
+        for (unsigned int i = 0; i < f.size(); i++) {
+            oceny_f.push_back(f.at(i).zwrocOcene());
+            minwiek_f.push_back(f.at(i).zwrocMinWiek());
+            czas_trwania_f.push_back(f.at(i).zwrocCzasTrwania());
+        }
+    }
+
+    if (Album_muzyczny::zwrocLiczbeAlbumow()) {
+        for (unsigned int i = 0; i < m.size(); i++) {
+            oceny_m.push_back(m.at(i).zwrocOcene());
+            minwiek_m.push_back(m.at(i).zwrocMinWiek());
+            czas_trwania_m.push_back(m.at(i).zwrocCzasTrwania());
+            utworow.push_back(m.at(i).zwrocLiczbeUtworow());
+        }
+    }
+
+    std::vector<double> oceny;
+    oceny.insert(oceny.end(), oceny_k.begin(), oceny_k.end());
+    oceny.insert(oceny.end(), oceny_f.begin(), oceny_f.end());
+    oceny.insert(oceny.end(), oceny_m.begin(), oceny_m.end());
+
+    std::vector<double> minwiek;
+    minwiek.insert(minwiek.end(), minwiek_k.begin(), minwiek_k.end());
+    minwiek.insert(minwiek.end(), minwiek_f.begin(), minwiek_f.end());
+    minwiek.insert(minwiek.end(), minwiek_m.begin(), minwiek_m.end());
+
+    std::cout << "OCENY:\t\t" << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << "OGÓLNE:\t\t" << findsum(oceny) << "\t" << findmax(oceny) << "\t" << findavg(oceny) << "\t" << findmin(oceny) << std::endl;
+    std::cout << "KSIĄŻKI:\t" << findsum(oceny_k) << "\t" << findmax(oceny_k) << "\t" << findavg(oceny_k) << "\t" << findmin(oceny_k) << std::endl;
+    std::cout << "FILMY:\t\t" << findsum(oceny_f) << "\t" << findmax(oceny_f) << "\t" << findavg(oceny_f) << "\t" << findmin(oceny_f) << std::endl;
+    std::cout << "ALBUMY:\t\t" << findsum(oceny_m) << "\t" << findmax(oceny_m) << "\t" << findavg(oceny_m) << "\t" << findmin(oceny_m) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "MIN. WIEK:\t" << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << "OGÓLNE:\t\t" << findsum(minwiek) << "\t" << findmax(minwiek) << "\t" << findavg(minwiek) << "\t" << findmin(minwiek) << std::endl;
+    std::cout << "KSIĄŻKI:\t" << findsum(minwiek_k) << "\t" << findmax(minwiek_k) << "\t" << findavg(minwiek_k) << "\t" << findmin(minwiek_k) << std::endl;
+    std::cout << "FILMY:\t\t" << findsum(minwiek_f) << "\t" << findmax(minwiek_f) << "\t" << findavg(minwiek_f) << "\t" << findmin(minwiek_f) << std::endl;
+    std::cout << "ALBUMY:\t\t" << findsum(minwiek_m) << "\t" << findmax(minwiek_m) << "\t" << findavg(minwiek_m) << "\t" << findmin(minwiek_m) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "KSIĄŻKI - LICZBA STRON:" << std::endl;
+    std::cout << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << findsum(strony) << "\t" << findmax(strony) << "\t" << findavg(strony) << "\t" << findmin(strony) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "FILMY - CZAS TRWANIA [M]:" << std::endl;
+    std::cout << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << findsum(czas_trwania_f) << "\t" << findmax(czas_trwania_f) << "\t" << findavg(czas_trwania_f) << "\t" << findmin(czas_trwania_f) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "MUZYKA - CZAS TRWANIA [M]:" << std::endl;
+    std::cout << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << findsum(czas_trwania_m) << "\t" << findmax(czas_trwania_m) << "\t" << findavg(czas_trwania_m) << "\t" << findmin(czas_trwania_m) << std::endl;
+
+    std::cout << std::endl;
+
+    std::cout << "MUZYKA - LICZBA UTWORÓW:" << std::endl;
+    std::cout << "SUMA\t" << "MAX\t" << "AVG\t" << "MIN\t" << std::endl;
+    std::cout << findsum(utworow) << "\t" << findmax(utworow) << "\t" << findavg(utworow) << "\t" << findmin(utworow) << std::endl;
+
+    system("pause");
+
 }

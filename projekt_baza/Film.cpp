@@ -21,6 +21,11 @@ void Film::wyswietl() const{
     std::cout << std::endl;
 }
 
+// metoda zwracająca czas trwania filmu
+unsigned short Film::zwrocCzasTrwania() const {
+    return czas_trwania;
+}
+
 // metoda zwracająca wartość składnika statycznego
 unsigned int Film::zwrocLiczbeFilmow() {
     return liczbaFilmow;

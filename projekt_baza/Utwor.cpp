@@ -10,6 +10,19 @@ unsigned int Utwor::zwrocLiczbeUtworow(){
     return liczbaUtworow;
 }
 
+std::string Utwor::zwrocTytul() const {
+    return tytul;
+}
+unsigned short Utwor::zwrocRokWydania() const {
+    return rok_wydania;
+}
+double Utwor::zwrocOcene() const {
+    return ocena;
+}
+unsigned short Utwor::zwrocMinWiek() const {
+    return min_wiek;
+}
+
 // konstruktor bezargumentowy
 Utwor::Utwor() {
     liczbaUtworow++;

@@ -26,8 +26,10 @@ int main()
         std::cout << "3. Wyszukiwanie." << std::endl;
         std::cout << "4. Edytuj przedmiot z bazy." << std::endl;
         std::cout << std::endl;
-        std::cout << "5. Zapisz stan bazy." << std::endl;
-        std::cout << "6. Wczytaj stan bazy." << std::endl;
+        std::cout << "5. Wyświetl statystyki." << std::endl;
+        std::cout << std::endl;
+        std::cout << "6. Zapisz stan bazy." << std::endl;
+        std::cout << "7. Wczytaj stan bazy." << std::endl;
         std::cout << std::endl;
         std::cout << "9. WYCZYŚĆ BAZĘ" << std::endl;
         std::cout << std::endl;
@@ -196,7 +198,11 @@ int main()
                 }
                 break;
             }
-            case 5: { // zapisywanie bazy
+            case 5: { // zaawansowane statystyki
+                statsMenu(ksiazki,filmy,muzyka);
+                break;
+            }
+            case 6: { // zapisywanie bazy
                 std::string name;
                 std::cout << "Podaj nazwę, pod którą chcesz zapisać bazę." << std::endl;
                 std::cout << "Bazy zostaną zapisane jako 3 pliki .csv" << std::endl;
@@ -214,7 +220,7 @@ int main()
                 system("pause");
                 break;
             }
-            case 6: { // wczytywanie bazy
+            case 7: { // wczytywanie bazy
                 std::string name;
                 std::cout << "Podaj nazwę bazy, którą chcesz wczytać." << std::endl;
                 std::cout << "Należy podać nazwę bazy przed znakiem _." << std::endl;

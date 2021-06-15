@@ -32,6 +32,11 @@ void Ksiazka::wyswietl() const{
     std::cout << std::endl;
 }
 
+// metoda zwracająca liczbę stron
+unsigned short Ksiazka::zwrocStrony() const {
+    return strony;
+}
+
 // metoda zwracająca wartość składnika statycznego
 unsigned int Ksiazka::zwrocLiczbeKsiazek() {
     return liczbaKsiazek;
